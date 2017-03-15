@@ -1,18 +1,18 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons left>
-        <div class="filter"></div>
+    <ion-buttons>
+      <div (click)="openAddModal()">
+        <div class="add"></div>
+      </div>
     </ion-buttons>
     <ion-title (click)="pipelineChoose()">
       <div class="titleFlex">
         {{title}} <div class="downArrow"></div>
       </div>
     </ion-title>
-    <ion-buttons end>
-      <div (click)="openAddModal()">
-        <div class="add"></div>
-      </div>
-    </ion-buttons>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 

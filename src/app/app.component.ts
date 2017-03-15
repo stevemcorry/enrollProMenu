@@ -8,6 +8,7 @@ import { Goals } from '../pages/goals/goals';
 import { Pipeline } from '../pages/pipeline/pipeline';
 import { Marketing } from '../pages/marketing/marketing';
 import { More } from '../pages/more/more';
+import { Messages } from '../pages/messages/messages';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class MyApp implements OnInit{
       { title: 'Pipeline', component: Pipeline },
       { title: 'Marketing', component: Marketing },
       { title: 'More', component: More },
+      { title: 'Messages', component: Messages },
     ];
 
   }

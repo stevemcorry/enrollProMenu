@@ -14,6 +14,7 @@ import { Goals } from '../pages/goals/goals';
 import { Pipeline } from '../pages/pipeline/pipeline';
 import { Marketing } from '../pages/marketing/marketing';
 import { More } from '../pages/more/more';
+import { Messages } from '../pages/messages/messages';
 
 
 //Modals
@@ -46,6 +47,7 @@ import { MarketText } from '../modals/market-text/market-text';
     Pipeline,
     Marketing,
     More,
+    Messages,
 
     //Modals
     AddAction,
@@ -76,6 +78,7 @@ import { MarketText } from '../modals/market-text/market-text';
     Pipeline,
     Marketing,
     More,
+    Messages,
 
     //Modals
     AddAction,
