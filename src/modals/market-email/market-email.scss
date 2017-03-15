@@ -1,0 +1,41 @@
+page-market-email{
+    textarea{
+        resize: none;
+        width: 90%;
+        height: 200px;
+        margin: 1% 5% 0 5%;
+        padding: 10px;
+        border-radius: 15px;
+        background: lightgrey;
+    }
+    button{
+        width: 42%;
+        height: 35px;
+        border-radius: 5px;
+    }
+    .next{
+        font-size: 17px;
+        color: white        
+    }
+    .subject{
+        height: 50px;
+    }
+    .next{
+        font-size: 17px;
+        color: white;
+    }
+    .rules{
+        height: 150px;
+    }
+    .contentChoose, .sendOptions{
+        display: flex;
+        justify-content: space-around;
+        margin: 5px;
+    }
+    .contentChoose{
+        margin-top: 15px;
+    }
+    .fun, .direct{
+        background: lightgreen;
+    }
+}

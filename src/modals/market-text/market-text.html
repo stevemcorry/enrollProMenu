@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <div (click)="dismiss()">
+        <ion-icon name="arrow-back" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>
+    <ion-title>{{option.name}}</ion-title>
+    <ion-buttons end>
+        <div class="next" (click)="nextPage(content)">NEXT</div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="contentChoose">
+    <button [ngClass]="{fun: fun}" (click)="contentChoose('fun'); fun=true; direct=false;">Fun</button>
+    <button [ngClass]="{direct: direct}" (click)="contentChoose('direct'); direct=true; fun=false">Direct</button>
+  </div>
+  <div *ngIf="fun" class="approach">A fun text</div>
+  <div *ngIf="direct" class="approach">A direct text</div>
+  <textarea [(ngModel)]="content" (keypress)="setContent(content)"></textarea>
+  <div class="sendOptions">
+    <button [ngClass]="{mass: mass}" (click)="mass=true; single=false;">Mass</button>
+    <button [ngClass]="{single: single}" (click)="single=true; mass=false">Single</button>
+  </div>
+  <div *ngIf="mass" class="approach">Send to Multiple People</div>
+  <div *ngIf="single" class="approach">Send to One Person</div>
+  <ion-list>
+
+  <ion-item>
+    <ion-label>Send Email after 2 Weeks</ion-label>
+    <ion-checkbox [(ngModel)]="email"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Remind me to call</ion-label>
+    <ion-checkbox [(ngModel)]="call"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Follow up after 2 days</ion-label>
+    <ion-checkbox [(ngModel)]="follow"></ion-checkbox>
+  </ion-item>
+
+</ion-list>
+</ion-content>

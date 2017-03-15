@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <div left>
+        <ion-icon name="close" (click)="dismiss()" class="icons"></ion-icon>
+    </div>
+    <ion-title>Edit Contact</ion-title>
+    <ion-buttons end>
+        <div class="save" (click)="editContact()">SAVE</div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="inputs">
+        <input type="text" [(ngModel)]="contact.first_name">
+        <input type="text" [(ngModel)]="contact.last_name">
+        <input type="text" [(ngModel)]="contact.email">
+        <input type="text" [(ngModel)]="contact.phone">
+        <!--<select [(ngModel)]="contact.role">
+            <option value="{id:1,name:'Builder'}">Builder</option>
+            <option value="{id:2,name:'Customer'}">Customer</option>
+            <option value="{id:3,name:'Other'}">Other</option>
+        </select>-->
+    </div>
+    <div class="buttons">
+        <button ion-button class="cancel" (click)="dismiss()">CANCEL</button>
+        <button ion-button (click)="editContact()">SAVE</button>
+    </div>
+</ion-content>

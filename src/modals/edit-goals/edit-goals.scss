@@ -1,0 +1,45 @@
+page-edit-goals{
+    .slide-zoom{
+            height: 100%;
+            overflow-y: scroll;
+        }
+        .goalsHeader{
+            text-align: left;
+            margin-bottom: 25px;
+            .goalsTitle{
+                font-size: 30px;
+            }
+            .goalsDueDate{
+                font-size: 22px;
+            }
+        }
+        .goalsList{
+            .goal{
+                margin-bottom: 15px;
+                text-align: left;
+                .goalTitle{
+                    font-size: 22px;
+                }
+                .goalBar{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    .bar{
+                        width: 80%;
+                        height: 20px;
+                        background: lightgrey;
+                        border-radius: 15px;
+                    }
+                    .progress{
+                        border-radius: 15px;
+                        height: 20px;
+                        background: #ACD373;
+                    }
+                    .barProgress{
+                        width: 20%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+}

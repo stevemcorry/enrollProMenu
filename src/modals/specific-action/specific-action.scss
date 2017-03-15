@@ -1,0 +1,120 @@
+page-specific-action{
+    .scroll-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .actionHead{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        height: 100px;
+        border: 3px solid grey;
+        border-radius: 10px;
+        background: lightgrey
+    }
+    .actionIcon{
+        font-size: 50px;
+        color: black;
+    }
+    .email{
+        background-image: url('../assets/img/actions/ACTIONSEmail.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 50px;
+        width: 50px;
+    }
+    .text{
+        background-image: url('../assets/img/actions/ACTIONStext.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 50px;
+        width: 50px;
+        margin: 3% 0 0 2%;
+    }
+    .call{
+        background-image: url('../assets/img/actions/ACTIONScall.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 50px;
+        width: 50px;
+        margin: 3% 0 0 2%;
+    }
+    .actionName{
+        font-size: 40px;
+        color: green;
+    }
+    .actionContact{
+        width: 90%;
+        height: 100px;
+    }
+    .contactName{
+        font-size: 35px;
+        color: purple;
+    }
+    .dueDate{
+        font-size: 30px;
+        color: purple;
+    }
+    .note{
+        width: 90%;
+        min-height: 150px;
+        border: 3px solid grey;
+        border-radius: 10px;
+        background: lightgrey;
+        padding: 5px;
+    }
+    .notes{
+        font-size: 15px;
+    }
+    .noteContent{
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    .sendOptions{
+        font-size: 55px;
+        color: grey;
+    }
+    .iconList{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .emailOn{
+        color: lightgreen;
+    }
+    .textOn{
+        color: lightgreen;
+    }
+    .callOn{
+        color: lightgreen;
+    }
+    .emailsend{
+        background-image: url('../assets/img/actions/ACTIONSEmail.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 40px;
+        width: 40px;
+    }
+    .textsend{
+        background-image: url('../assets/img/actions/ACTIONStext.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 40px;
+        width: 40px;
+    }
+    .callsend{
+        background-image: url('../assets/img/actions/ACTIONSCall.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 40px;
+        width: 40px;
+    }
+}

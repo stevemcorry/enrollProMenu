@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Actions</ion-title>
+  </ion-navbar>
+</ion-header>
+
+  <div class="dimmer" [ngClass]="{showDim: showDim}" (click)="showDim = false; closeFab(fab)"></div>
+<ion-content>
+  <div *ngFor="let action of actions | actionFilter: action.complete" class="task" [ngClass]="{completeAnimation:  animate(action.animate)}">
+    <div (click)="openSpecificAction(action)" class="{{classCheck(action)}}"></div>
+    <div class="spacing">
+      <div (click)="openSpecificAction(action)" class="actionBody">
+        <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
+        <div class="taskNotes">{{action.due_date}}</div>
+      </div>
+      <div class="statusCircle" [style.background-color]="statusCheck(action.animate)" (click)="action.animate = true; completeAction(action.id)"></div>
+    </div>
+  </div>
+  <ion-fab bottom center #fab>
+    <div ion-fab (click)="showDim = !showDim;" class="addButton" [ngClass]="{addButtonActive: showDim}" ></div>
+    <ion-fab-list side="right">
+      <div (click)="addContact(); showDim = false; closeFab(fab)" class="addContactIcon"></div>
+    </ion-fab-list>
+    <ion-fab-list side="left">
+      <div (click)="chooseActionContact(); showDim = false; closeFab(fab)" class="addActionIcon"></div>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

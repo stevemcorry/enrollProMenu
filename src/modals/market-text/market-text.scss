@@ -1,0 +1,41 @@
+page-market-text{
+    textarea{
+        resize: none;
+        width: 90%;
+        height: 200px;
+        margin: 1% 5% 0 5%;
+        padding: 10px;
+        border-radius: 15px;
+        background: lightgrey;
+    }
+    button{
+        width: 42%;
+        height: 35px;
+        border-radius: 5px;
+        background: lightgrey;
+    }
+    .next{
+        font-size: 17px;
+        color: white;
+    }
+    .rules{
+        height: 150px;
+    }
+    .contentChoose, .sendOptions{
+        display: flex;
+        justify-content: space-around;
+        margin: 5px;
+    }
+    .contentChoose{
+        margin-top: 15px;
+    }
+    .approach{
+        text-align: center;
+    }
+    .mass, .single{
+        background: lightgreen;
+    }
+    .fun, .direct{
+        background: lightgreen;
+    }
+}

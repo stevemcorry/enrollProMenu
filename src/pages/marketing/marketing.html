@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+        <div class="text"></div>
+    </ion-buttons>
+    <ion-title>Marketing</ion-title>
+    <ion-buttons end>
+        <div class="search"></div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="marketOptions" *ngFor="let market of markets">
+    <div class="box" (click)="openModal(market)">
+      <div class="marketTitle">
+        <div class="vertical-text">title</div>
+      </div>
+      <div class="marketBody"></div>
+    </div>
+    <div class="description">{{market.name}}</div>
+  </div>
+</ion-content>

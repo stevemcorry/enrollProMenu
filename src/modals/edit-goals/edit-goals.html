@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <div left>
+        <ion-icon name="arrow-back" (click)="dismiss()" class="icons"></ion-icon>
+    </div>
+    <ion-title>Success Tracker</ion-title>
+    <ion-buttons end>
+        <ion-icon name="help" class="icons"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="goalsHeader">
+      <div class="goalsTitle" (click)="getGoalTotals()">FRANK'S GOALS</div>
+      <div class="goalsDueDate">DUE DATE: 2/2/2017</div>
+    </div>
+    <div class="goalsList" *ngFor="let goal of goals">
+      <div class="goal">
+        <div class="goalTitle">{{goal.name}}</div>
+        <div class="goalBar">
+          <div class="bar">
+            <div class="progress" [style.width]="setWidth(goal.amount)"></div>
+          </div>
+          <div class="barProgress">{{goal.amount}}/10</div>
+        </div>
+      </div>
+    </div>
+</ion-content>

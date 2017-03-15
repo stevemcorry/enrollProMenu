@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Actions</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="addProspect">
+        <button ion-button full (click)="presentAlert()">{{actionType}}</button>
+    <textarea type="text" [(ngModel)]="newAction.notes"placeholder="Notes"></textarea>
+    <ion-item>
+        <ion-label>DUE DATE:</ion-label>
+        <ion-datetime displayFormat="MMM/DD/YYYY" pickerFormat="MMM DD YYYY"  min="2016" max="2020-12-31"  [(ngModel)]="newAction.due_date"></ion-datetime>
+    </ion-item>
+    <!--<div class="iconList">
+        <ion-icon [ngClass]="{emailOn: emailOn}" (click)="newAction.action_type = 1; emailOn=true; textOn=false; callOn=false" name="mail" class="sendOptions"></ion-icon>
+        <ion-icon [ngClass]="{textOn: textOn}" (click)="newAction.action_type = 2; textOn=true; emailOn=false; callOn=false;"  name="chatbubbles" class="sendOptions"></ion-icon>
+        <ion-icon [ngClass]="{callOn: callOn}" (click)="newAction.action_type = 3; callOn=true; emailOn=false; textOn=false;" name="call" class="sendOptions"></ion-icon>
+    </div>-->
+    <div>
+      <button ion-button (click)="dismiss()">CANCEL</button>
+      <button ion-button (click)="addAction()">ADD ACTION</button>
+    </div>
+</ion-content>

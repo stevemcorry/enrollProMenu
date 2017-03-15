@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Page Two</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="circles">
+    <div *ngFor="let page of pager" class="circle {{pagerCheck(page)}}"></div>
+  </div>
+  <ion-slides #gameSlides>
+  <ion-slide class="slide1">
+    <div class="profile">
+      <div class="profilePic"><ion-icon name="contact" class="profileIcon"></ion-icon></div>
+      <div class="profileTitle">
+        <div class="frank">{{name}}</div>
+        <div>Rank: {{rank}}</div>
+      </div>
+    </div>
+    <div class="stars">
+      <div class="star" *ngFor="let star of stars"></div>
+    </div>
+    <div class="bottom">
+      <div class="canvasCover">
+        <div class="donut">
+        <canvas #donutCanvas class="donutChart"></canvas>
+          <div class="donut-inner">
+              <span class="going">GOING</span>
+              <div class="stepIn">{{step}}</div>
+          </div>
+        </div>
+        <div class="points" (click)="points = points + 100; setPoints(points)">
+          <div class="pointsAmount">{{points}}</div>
+          <div class="pointsLabel">points</div>
+        </div>
+      </div>
+      <div class="progressBar">
+        <div class="diamond" [ngClass]="{progressActive: diamond}">DIAMOND</div>
+        <div class="emerald" [ngClass]="{progressActive: emerald}">EMERALD</div>
+        <div class="saphire" [ngClass]="{progressActive: sapphire}">SAPPHIRE</div>
+        <div class="ruby" [ngClass]="{progressActive: ruby}">RUBY</div>
+        <div class="pearl" [ngClass]="{progressActivePearl: pearl}">PEARL</div>
+      </div>
+    </div>
+  </ion-slide>
+  <ion-slide class="slide2">
+    <div class="goalsHeader">
+      <div class="goalsTitle" (click)="getGoalTotals()">FRANK'S GOALS</div>
+      <div class="goalsDueDate">DUE DATE: 2/2/2017</div>
+    </div>
+    <div class="goalsList" *ngFor="let goal of goals">
+      <div class="goal">
+        <div class="goalTitle">{{goal.name}}</div>
+        <div class="goalBar">
+          <div class="bar">
+            <div class="progress" [style.width]="setWidth(goal.amount)"></div>
+          </div>
+          <div class="barProgress">{{goal.amount}}/10</div>
+        </div>
+      </div>
+    </div>
+  </ion-slide>
+  <ion-slide class="slide3">
+    <div class="badges"></div>
+    <h1>Liza's Pipeline Overview</h1>
+    <div class="slide3Bottom">
+      <div class="triangles">
+        <div class="triangle1"><div class="inner1" [style.width]="inner1"></div></div>
+        <div class="triangle2"><div class="inner2" [style.width]="inner2"></div></div>
+        <div class="triangle3"><div class="inner3" [style.width]="inner3"></div></div>
+        <div class="triangle4"><div class="inner4" [style.width]="inner4"></div></div>
+        <div class="triangle5"><div class="inner5" [style.width]="inner5"></div></div>
+      </div>
+      <div class="chartLabels">
+        <div class="label label1">Future</div>
+        <div class="label label2">Exposed</div>
+        <div class="label label3">Committed</div>
+        <div class="label label4">Attended</div>
+        <div class="label label5">Enrolled</div>
+      </div>
+    </div>
+  </ion-slide>
+</ion-slides>
+
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Actions</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <input type="text" placeholder="search" [(ngModel)]="search" class="searchBar">
+    <div *ngFor="let contact of contacts | contactFilter: search">
+        <ion-item (click)="addAction(contact)">
+            <ion-label>{{contact.first_name}} {{contact.last_name}}</ion-label>
+        </ion-item>
+    </div>
+</ion-content>

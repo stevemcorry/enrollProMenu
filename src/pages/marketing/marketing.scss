@@ -1,0 +1,54 @@
+page-marketing{
+    .scroll-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 85px !important;
+        margin-bottom: 60px !important;
+    }
+    .text{
+        background-image: url('../assets/img/marketing/MARKETINGtext.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 35px;
+        height: 35px;
+        margin: 5px 5px 10px 5px;
+    }
+    .search{
+        background-image: url('../assets/img/header/HEADERsearch.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 5px 5px 10px 5px;
+    }
+    .marketOptions{
+        height: 26%;
+        width: 50%;
+    }
+    .box{
+        height: 99%;
+        background: white;
+        margin: 5px;
+        border-radius: 10px;
+        display: flex;
+        box-shadow: 5px 5px 5px #888888;
+    }
+    .marketTitle{
+        background: lightgrey;
+        height: 100%;
+        width: 35px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .vertical-text {
+	    transform: rotate(-90deg);
+	    transform-origin: 55px 56px;
+        width: 114px;
+        font-size: 25px;
+    }
+    .description{
+        text-align: center;
+        margin: 0 3px 0 3px;
+    }
+}

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+        <ion-icon name="menu" class="icons"></ion-icon>
+    </ion-buttons>
+    <ion-title>More</ion-title>
+    <ion-buttons end>
+        <ion-icon name="help" class="icons"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile">
+      <div class="profilePic"><ion-icon name="contact" class="profileIcon"></ion-icon></div>
+      <div class="profileTitle">
+        <div>{{name}}</div>
+      </div>
+    </div>
+  <div class="list">
+    <div class="item">
+      <div class="sync"></div>
+      Syncronize Data
+    </div>
+    <div class="item">
+      <div class="sub"></div>
+      Subscribe
+    </div>
+    <div class="item">
+      <div class="import"></div>
+      Import Contacts
+    </div>
+    <div class="item">
+      <div class="enroll"></div>
+      EnrollPro Account
+    </div>
+    <div class="item">
+      <div class="pref"></div>
+      Preferences
+    </div>
+    <div class="item">
+      <div class="fav"></div>
+      Favorite Content
+    </div>
+    <div class="item">
+      <div class="tut"></div>
+      Tutorial
+    </div>
+  </div>
+  <button ion-button (click)="logout()">Log Out</button>
+</ion-content>

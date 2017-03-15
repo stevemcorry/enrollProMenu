@@ -1,0 +1,34 @@
+page-add-action{
+    textarea{
+        height: 100px;
+        width: 85%;
+        border: 3px solid lightgrey;
+        border-radius: 15px;
+        padding: 5px;
+        resize: none;
+    }
+    .scroll-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sendOptions{
+        font-size: 55px;
+        color: grey;
+    }
+    .iconList{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .emailOn{
+        color: lightgreen;
+    }
+    .textOn{
+        color: lightgreen;
+    }
+    .callOn{
+        color: lightgreen;
+    }
+}

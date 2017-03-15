@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>
+    <ion-title>market email</ion-title>
+    <ion-buttons end>
+      <div class="next" (click)="nextPage()" >NEXT</div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+  <div class="contentChoose">
+    <button [ngClass]="{fun: fun}" (click)="contentChoose('fun'); fun=true; direct=false;">Fun</button>
+    <button [ngClass]="{direct: direct}" (click)="contentChoose('direct'); direct=true; fun=false">Direct</button>
+  </div>
+  <textarea class="subject" [(ngModel)]="subject" (keypress)="setContent(content)"></textarea>
+  <textarea [(ngModel)]="content" (keypress)="setContent(content)"></textarea>
+  <ion-list>
+
+  <ion-item>
+    <ion-label>Send Email after 2 Weeks</ion-label>
+    <ion-checkbox [(ngModel)]="email"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Remind me to call</ion-label>
+    <ion-checkbox [(ngModel)]="call"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Follow up after 2 days</ion-label>
+    <ion-checkbox [(ngModel)]="follow"></ion-checkbox>
+  </ion-item>
+
+</ion-list>
+</ion-content>
+</ion-content>

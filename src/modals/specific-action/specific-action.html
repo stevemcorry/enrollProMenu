@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Actions</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="addProspect">
+    <div class="actionHead">
+      <div class="{{classCheck(action)}}"></div>
+      <div>
+        <div class="actionName">{{action.action_type.name}}</div>
+      </div>
+    </div>
+    <div class="actionContact">
+      <div class="contactName">{{action.contact.first_name}} {{action.contact.last_name}}</div>
+      <div class="dueDate">Due Date: {{action.due_date}}</div>
+    </div>
+    <div class="note">
+      <div class="notes">Notes:</div>
+      <div class="noteContent">{{note}}</div>
+    </div>
+    <div class="iconList">
+        <div [ngClass]="{emailOn: emailOn}" (click)="emailOn=true; textOn=false; callOn=false; sendEmail()" class="emailsend"></div>
+        <div [ngClass]="{textOn: textOn}" (click)="textOn=true; emailOn=false; callOn=false; sendText()" class="textsend"></div>
+        <div [ngClass]="{callOn: callOn}" (click)="callOn=true; emailOn=false; textOn=false; callNumber()" class="callsend"></div>
+    </div>
+</ion-content>

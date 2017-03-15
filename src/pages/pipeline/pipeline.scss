@@ -1,0 +1,104 @@
+page-pipeline {
+    .scroll-content{
+        overflow-y: scroll;
+    }
+    .filter{
+        background-image: url('../assets/img/pipeline/PIPESfilter.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 5px 5px 10px 5px;
+    }
+    .add{
+        background-image: url('../assets/img/pipeline/PIPESadd.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 5px 5px 10px 5px;
+    }
+    .downArrow{
+        background-image: url('../assets/img/pipeline/PIPESarrow.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        margin: 10% 5px 10px 10px;
+    }
+    .titleFlex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dimmer{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: -50;
+        background: rgba(0,0,0,0);
+    }
+    .dimmerActive{
+        z-index: 2;
+        background: rgba(0,0,0,.5);
+    }
+    .position{
+        top: 0%;
+        display: block;
+        align-items: center;
+        width: 90%;
+        height: 30px;
+        background: $greeny;
+        padding-left: 3px;
+        font-size: 25px;
+        color: white;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .slides{
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .prospects{
+        position: absolute;
+        top: 6%;
+        width: 100%;
+        font-family: 'brandon-medium';
+        letter-spacing: .7px;
+    }
+    .arrow{
+        display: flex;
+        width: 100%;
+        position: fixed;
+        top: 0%;
+        height: 30px;
+        align-items: center;
+        background: white;
+        z-index: 2;
+    }
+    .rightArrow{
+        font-size: 0px; line-height: 0%; width: 0px;
+        border-top: 16px solid white;
+        border-left: 50px solid $greeny;
+        border-bottom: 15px solid white;
+    }
+    .line{
+        height: 1px;
+        width: 100%;
+        background: $greyy;
+    }
+    .prospect {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 10px 0px 10px;
+        color: $purp;
+    }
+    .smallCircle {
+        height: 10px;
+        width: 10px;
+        background: $dark;
+        border-radius: 50%;
+    }
+}

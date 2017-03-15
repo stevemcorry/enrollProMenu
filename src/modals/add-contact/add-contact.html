@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="inputs">
+      <input type="text" required placeholder="First Name" [(ngModel)]="contact.first_name">
+      <input type="text" required placeholder="Last Name" [(ngModel)]="contact.last_name">
+      <input type="tel" required placeholder="Phone Number" [(ngModel)]="contact.phone">
+      <input type="email" required placeholder="Email" [(ngModel)]="contact.email">
+      <ion-slides #pipeSlider class="choosePipe" #choosePipe>
+        <ion-slide *ngFor="let slide of slides" class="slides">
+        <div class="slideName">{{slide.name}}</div>
+        </ion-slide>
+      </ion-slides>
+      <div class="pagerBar">
+        <div *ngFor="let slide of slides" class="pagerBox">
+          <div [ngClass]="{activeFlag: getIndex(slide)}" class="pagerFlag"></div>
+          <div class="pagerArrow" [ngClass]="{activeArrow: getIndex(slide)}"></div>
+        </div>
+      </div>
+      <input type="text" placeholder="Custom Tag" [(ngModel)]="contact.custom_tag">
+    </div>
+    <div class="buttons">
+      <button class="cancel" ion-button (click)="dismiss()">CANCEL</button>
+      <button class="save" ion-button (click)="addContact(contact)">SAVE</button>
+    </div>
+</ion-content>

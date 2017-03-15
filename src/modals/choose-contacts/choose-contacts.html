@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>
+    <ion-title>Choose Contacts</ion-title>
+    <ion-buttons end>
+      <div>
+        <ion-icon name="mail" class="icons" (click)="send()"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <input type="text" placeholder="search" [(ngModel)]="search" class="searchBar">
+    <div *ngFor="let contact of contacts | contactFilter: search">
+        <ion-item>
+            <ion-label (click)="getContactInfo(contact.id)">{{contact.first_name}} {{contact.last_name}}</ion-label>
+            <ion-checkbox (click)="getContactInfo(contact.id)"></ion-checkbox>
+        </ion-item>
+    </div>
+</ion-content>
