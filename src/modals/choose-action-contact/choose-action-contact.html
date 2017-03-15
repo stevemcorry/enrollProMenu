@@ -1,9 +1,16 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Actions</ion-title>
+    <ion-buttons left>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>
+    <ion-title>Choose Contact</ion-title>
+    <!--<ion-buttons end>
+      <div>
+        <ion-icon name="search" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>-->
   </ion-navbar>
 </ion-header>
 

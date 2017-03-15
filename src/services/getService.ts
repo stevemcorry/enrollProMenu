@@ -96,6 +96,14 @@ export class GetService implements OnInit{
                 return data.json();
             })
     }
+    getGoals(key){
+            let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://api.enroll.pro/api/goals', {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
+    }
     ngOnInit(){
     }
 }

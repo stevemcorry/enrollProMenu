@@ -72,6 +72,6 @@ export class MyApp implements OnInit{
   }
 
   ngOnInit(){
-    this.login();
+    //this.login();
   }
 }

@@ -17,11 +17,11 @@ export class Goals implements OnInit{
   constructor(public navCtrl: NavController, public getService: GetService, public events: Events, public modalCtrl: ModalController, public alertCtrl: AlertController) {
     this.events.subscribe('goalSelect', () => {
       this.getName();
-      this.getContactPosition();
+      this.getGoalPoints();
       this.getGoalTotals();
     })
     this.events.subscribe('points', () => {
-      this.getContactPosition();
+      this.getGoalPoints();
     })
   }
   name;
@@ -151,17 +151,11 @@ export class Goals implements OnInit{
             }
         });
   }
-  getContactPosition(){
+  getGoalPoints(){
     this.points = 0;
     this.getService.getStorage().then(key => {
-      this.getService.getContactPosition(key).subscribe(res => {
-      res.filter(x => {
-        for(var j = 0; j < x.contacts.length; j++){
-          if(x.contacts.length){
-            this.points += (x.id * 10);
-          }
-        }
-      })
+      this.getService.getGoals(key).subscribe(res => {
+      this.points = res.points;
       this.setPoints(this.points);
       });
     })
@@ -233,18 +227,47 @@ export class Goals implements OnInit{
   }
   //Second Slide
   goals = [];
+  committed = {
+    amount: 0,
+    goal: 0
+  };
+  enrolled = {
+    amount: 0,
+    goal: 0
+  };
+  oils = {
+    amount: 0,
+    goal: 0
+  };
+  presentation = {
+    amount: 0,
+    goal: 0
+  };
+  top = {
+    amount: 0,
+    goal: 0
+  };  
+
   getGoalTotals(){
     this.goals = [];
     this.getService.getStorage().then(key => {
-      this.getService.getContactPosition(key).subscribe(res => {
-      res.filter(x => {
-        let obj = {
-          name: x.name,
-          amount: x.contacts.length
-        }
-        if(obj.name === 'Top 45' || obj.name === 'Experienced E.O.'  || obj.name === 'Committed to Receiving Presentation'  || obj.name === 'Experienced Presentation'  || obj.name === 'Enrolled' )
-        this.goals.push(obj);
-      })
+      this.getService.getGoals(key).subscribe(res => {
+
+      this.committed.amount =res.standard.committed_to_presentation_actual;
+      this.committed.goal =res.standard.committed_to_presentation_goal;
+
+      this.enrolled.amount =res.standard.enrolled_actual;
+      this.enrolled.goal =res.standard.enrolled_goal;
+
+      this.oils.amount =res.standard.experienced_eo_actual;
+      this.oils.goal =res.standard.experienced_eo_goal;
+
+      this.presentation.amount =res.standard.experienced_presentation_actual;
+      this.presentation.goal =res.standard.experienced_presentation_goal;
+
+      this.top.amount =res.standard.top_45_actual;
+      this.top.goal =res.standard.top_45_goal;
+
       });
     })
   }
@@ -259,5 +282,8 @@ export class Goals implements OnInit{
   // inner5 = "45px";
 
   ngOnInit(){
+      this.getName();
+      this.getGoalPoints();
+      this.getGoalTotals();
   }
 }

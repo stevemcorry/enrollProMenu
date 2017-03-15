@@ -51,14 +51,50 @@
       <div class="goalsTitle" (click)="getGoalTotals()">FRANK'S GOALS</div>
       <div class="goalsDueDate">DUE DATE: 2/2/2017</div>
     </div>
-    <div class="goalsList" *ngFor="let goal of goals">
+    <div class="goalsList">
       <div class="goal">
-        <div class="goalTitle">{{goal.name}}</div>
+        <div class="goalTitle">Committed To Presentation</div>
         <div class="goalBar">
           <div class="bar">
-            <div class="progress" [style.width]="setWidth(goal.amount)"></div>
+            <div class="progress" [style.width]="setWidth(committed.amount)"></div>
           </div>
-          <div class="barProgress">{{goal.amount}}/10</div>
+          <div class="barProgress">{{committed.amount}}/{{committed.goal}}</div>
+        </div>
+      </div>
+      <div class="goal">
+        <div class="goalTitle">Enrolled</div>
+        <div class="goalBar">
+          <div class="bar">
+            <div class="progress" [style.width]="setWidth(enrolled.amount)"></div>
+          </div>
+          <div class="barProgress">{{enrolled.amount}}/{{enrolled.goal}}</div>
+        </div>
+      </div>
+      <div class="goal">
+        <div class="goalTitle">Experienced Essential Oils</div>
+        <div class="goalBar">
+          <div class="bar">
+            <div class="progress" [style.width]="setWidth(oils.amount)"></div>
+          </div>
+          <div class="barProgress">{{oils.amount}}/{{oils.goal}}</div>
+        </div>
+      </div>
+      <div class="goal">
+        <div class="goalTitle">Experienced Presentation</div>
+        <div class="goalBar">
+          <div class="bar">
+            <div class="progress" [style.width]="setWidth(presentation.amount)"></div>
+          </div>
+          <div class="barProgress">{{presentation.amount}}/{{presentation.goal}}</div>
+        </div>
+      </div>
+      <div class="goal">
+        <div class="goalTitle">Top 45</div>
+        <div class="goalBar">
+          <div class="bar">
+            <div class="progress" [style.width]="setWidth(top.amount)"></div>
+          </div>
+          <div class="barProgress">{{top.amount}}/{{top.goal}}</div>
         </div>
       </div>
     </div>

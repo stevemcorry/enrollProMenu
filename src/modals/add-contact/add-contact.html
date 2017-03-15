@@ -1,9 +1,16 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Add Contact</ion-title>
+    <ion-buttons left>
+      <div (click)="dismiss()">
+        <div class="headerDiv">CANCEL</div>
+      </div>
+    </ion-buttons>
+    <ion-title>new contact</ion-title>
+    <ion-buttons end>
+      <div (click)="addContact(contact)">
+        <div class="headerDiv">SAVE</div>
+      </div>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
