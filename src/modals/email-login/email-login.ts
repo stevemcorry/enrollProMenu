@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/postService';
 import { GetService } from '../../services/getService';
 import { Platform, NavParams, ViewController, NavController} from 'ionic-angular';
-//import { TabsPage } from '../../pages/tabs/tabs';
+import { Actions } from '../../pages/actions/actions';
 
 @Component({
   selector: 'page-email-login',
@@ -37,7 +37,7 @@ export class EmailLogin implements OnInit{
             console.log(res);
             if(res){   
             this.store(res)
-            //this.navCtrl.setRoot(TabsPage, {start: res});
+            this.navCtrl.setRoot(Actions);
             } else {
                 alert('Incorrect login')
             }
