@@ -1,0 +1,32 @@
+page-email-login{
+    .content{
+        text-align: center;
+    }
+    .signUp{
+        display: flex;
+        font-size: 35px;
+        justify-content: center;
+        color: lightgreen;
+        margin: 20px 0 10px 0;
+    }
+    .back{
+        position: fixed;
+        left: 3%;
+    }
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+    .input{
+        background: #EAEAEA;
+        margin: 10px 0 5px 0;
+        height: 40px;
+        padding-left: 5px;
+        border: 3px solid lightgrey;
+    }
+    .create{
+        text-align: center;
+        background: #5F4275 !important;
+    }
+}

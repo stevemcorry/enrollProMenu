@@ -1,0 +1,12 @@
+<ion-content class="content">
+  <div class="signUp">
+    <ion-icon name="arrow-back" (click)="dismiss()" class="back"></ion-icon>
+    <div>sign up</div>
+  </div>
+  <div class="inputs">
+  <input type="text" [(ngModel)]="user.username" placeholder="ENTER YOUR EMAIL" class="input">
+  <input type="text" [(ngModel)]="fullname" placeholder="ENTER YOUR FULL NAME" class="input">
+  <input type="password" [(ngModel)]="user.password" placeholder="ENTER YOUR PASSWORD" class="input">
+  </div>
+  <button ion-button class="create" (click)="login()">CREATE AN ACCOUNT</button>
+</ion-content>

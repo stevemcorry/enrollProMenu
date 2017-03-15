@@ -1,0 +1,53 @@
+page-login{
+    .scroll-content{
+        background: mintcream;
+        color: purple;
+    }
+    .flex{
+        display: flex;
+        justify-content: center;
+    }
+    .line{
+        height: 2px;
+        background: grey;
+        width: 30%;
+    }
+    .or{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 30px;
+    }
+    .fancy{
+        font-family: fantasy;
+    }
+    .top{
+        height: 50px;
+        align-items: center;
+        font-size: 25px;
+    }
+    .topMid{
+        height: 100px;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .buttons{
+        text-align: center;
+    }
+    .mid{
+        color: grey;
+        font-size: 20px;
+        text-align: center;
+    }
+    .started{
+        height: 50px;
+        align-items: center;
+    }
+    .midBottom{
+        font-size: 15px;
+        height: 40px;
+        align-items: center;
+    }
+}

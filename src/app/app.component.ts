@@ -9,6 +9,7 @@ import { Pipeline } from '../pages/pipeline/pipeline';
 import { Marketing } from '../pages/marketing/marketing';
 import { More } from '../pages/more/more';
 import { Messages } from '../pages/messages/messages';
+import { LoginModal } from '../modals/login/login';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { Messages } from '../pages/messages/messages';
 export class MyApp implements OnInit{
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Actions;
+  rootPage: any = LoginModal;
 
   pages: Array<{title: string, component: any}>;
 
