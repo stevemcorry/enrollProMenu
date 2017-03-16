@@ -19,7 +19,7 @@ import { LoginModal } from '../modals/login/login';
 export class MyApp implements OnInit{
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginModal;
+  rootPage: any = Actions;
 
   pages: Array<{title: string, component: any}>;
 
