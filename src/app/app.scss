@@ -1,4 +1,23 @@
 // http://ionicframework.com/docs/v2/theming/
+.menuHeader{
+    background-color: $dark;
+}
+.whiteMenuHeader{
+    color: white;
+}
+.menuContent{
+    background-color: $dark;
+}
+.menuItem{
+    background-color: $dark;
+    color: white;
+}
+.menuItem .item-inner{
+    border-bottom: none !important;
+}
+.item-block:last-child{
+    border-bottom: none !important;
+}
 .icons{
     cursor: pointer;
     padding: 0px 10px 0 10px;
@@ -6,7 +25,8 @@
     color: black;
 }
 .toolbar-background {
-    background-color: #E5E6E8;
+    background-color: $greyy;
+    border-style: none !important;
 }
 
 // App Global Sass

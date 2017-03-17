@@ -20,8 +20,9 @@
   <ion-slides [options]="{pager:true}" #pipeSlider (ionSlideDidChange)="slideChange()">
     <ion-slide *ngFor="let slide of slides" class="slides">
       <div class="arrow">
+        <div class="leftBump"></div>
         <div class="position">{{slide.name}} ({{slide.number}})</div>
-        <div class="rightArrow"></div>
+        <div class="rightBump"></div>
       </div>
       <div class="prospects">
         <div *ngFor="let prospect of prospects | filter: slide" (click)="openModal(prospect.contact)">

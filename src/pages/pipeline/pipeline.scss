@@ -42,26 +42,13 @@ page-pipeline {
         z-index: 2;
         background: rgba(0,0,0,.5);
     }
-    .position{
-        top: 0%;
-        display: block;
-        align-items: center;
-        width: 90%;
-        height: 30px;
-        background: $greeny;
-        padding-left: 3px;
-        font-size: 25px;
-        color: white;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
     .slides{
         height: 100%;
         overflow-y: scroll;
     }
     .prospects{
         position: absolute;
-        top: 6%;
+        top: 55px;
         width: 100%;
         font-family: 'brandon-medium';
         letter-spacing: .7px;
@@ -69,18 +56,38 @@ page-pipeline {
     .arrow{
         display: flex;
         width: 100%;
+        margin: 5px 0 5px 0;
         position: fixed;
         top: 0%;
-        height: 30px;
+        height: 50px;
         align-items: center;
         background: white;
         z-index: 2;
     }
-    .rightArrow{
-        font-size: 0px; line-height: 0%; width: 0px;
-        border-top: 16px solid white;
-        border-left: 50px solid $greeny;
-        border-bottom: 15px solid white;
+    .position{
+        top: 0%;
+        display: block;
+        align-items: center;
+        width: 95%;
+        height: 70%;
+        background: $bluish;
+        padding-left: 3px;
+        font-size: 25px;
+        color: white;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .leftBump{
+        height: 85%;
+        width: 2%;
+        margin: 1px;
+        background-color: $bluish;
+    }
+    .rightBump{
+        height: 85%;
+        width: 2%;
+        margin: 1px;
+        background-color: $bluish;
     }
     .line{
         height: 1px;
