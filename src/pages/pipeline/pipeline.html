@@ -32,4 +32,46 @@
       </div>
     </ion-slide>
   </ion-slides>
+  <div class="bottomPipe">
+        <div class="pipeSection" (click)="goToSlide(0); pipeColor(0)">
+          <div class="miniPipe">
+            <div class="bumper" [ngClass]="{'bluish': prepare}"></div>
+            <div class="letter" [ngClass]="{'bluish': prepare}">P</div>
+            <div class="bumper" [ngClass]="{'bluish': prepare}"></div>
+          </div>
+          <div class="description">Prepare</div>
+        </div>
+        <div class="pipeSection" (click)="goToSlide(3); pipeColor(1)">
+          <div class="miniPipe">
+            <div class="bumper" [ngClass]="{'bluish': invite}"></div>
+            <div class="letter" [ngClass]="{'bluish': invite}">I</div>
+            <div class="bumper" [ngClass]="{'bluish': invite}"></div>
+          </div>
+          <div class="description">Invite</div>
+        </div>
+        <div class="pipeSection" (click)="goToSlide(5); pipeColor(2)">
+          <div class="miniPipe">
+            <div class="bumper" [ngClass]="{'bluish': present}"></div>
+            <div class="letter" [ngClass]="{'bluish': present}">P</div>
+            <div class="bumper" [ngClass]="{'bluish': present}"></div>
+          </div>
+          <div class="description">Present</div>
+        </div>
+        <div class="pipeSection" (click)="goToSlide(6); pipeColor(3)">
+          <div class="miniPipe">
+            <div class="bumper" [ngClass]="{'bluish': enroll}"></div>
+            <div class="letter" [ngClass]="{'bluish': enroll}">E</div>
+            <div class="bumper" [ngClass]="{'bluish': enroll}"></div>
+          </div>
+          <div class="description">Enroll</div>
+        </div>
+        <div class="pipeSection" (click)="goToSlide(); pipeColor(4)">
+          <div class="miniPipe">
+            <div class="bumper" [ngClass]="{'bluish': support}"></div>
+            <div class="letter" [ngClass]="{'bluish': support}">S</div>
+            <div class="bumper" [ngClass]="{'bluish': support}"></div>
+          </div>
+          <div class="description">Support</div>
+        </div>
+      </div>
 </ion-content>

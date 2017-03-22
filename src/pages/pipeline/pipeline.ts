@@ -30,7 +30,6 @@ export class Pipeline implements OnInit {
     this.pipeSlider.slideTo(x, 500);
   }
   slideChange(){
-    console.log(this.pipeSlider._activeIndex);
     if(this.pipeSlider._activeIndex <= 2){
       this.title = 'Names List'
     } else if(this.pipeSlider._activeIndex > 2 && this.pipeSlider._activeIndex <= 6){
@@ -77,6 +76,11 @@ export class Pipeline implements OnInit {
   public allProspects;
   public pipelineFilter = [];
   public obj;
+  public prepare = true;
+  public invite = false;
+  public present = false;
+  public enroll = false;
+  public support = false;
   dotColor(prosp){
     if(prosp == 0) {
       return "#ACD373";
@@ -84,6 +88,43 @@ export class Pipeline implements OnInit {
       return "#959595";
     } else {
       return "#E55F61"
+    }
+  }
+  pipeColor(x){
+    if(x === 0){
+      this.prepare = true;
+      this.invite = false;
+      this.present = false;
+      this.enroll = false;
+      this.support = false;
+    }
+    else if(x === 1){
+      this.prepare = false;
+      this.invite = true;
+      this.present = false;
+      this.enroll = false;
+      this.support = false;
+    }
+    else if(x === 2){
+      this.prepare = false;
+      this.invite = false;
+      this.present = true;
+      this.enroll = false;
+      this.support = false;
+    }
+    else if(x === 3){
+      this.prepare = false;
+      this.invite = false;
+      this.present = false;
+      this.enroll = true;
+      this.support = false;
+    }
+    else if(x === 4){
+      this.prepare = false;
+      this.invite = false;
+      this.present = false;
+      this.enroll = false;
+      this.support = true;
     }
   }
   slidesSet(){

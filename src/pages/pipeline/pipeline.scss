@@ -108,4 +108,40 @@ page-pipeline {
         background: $dark;
         border-radius: 50%;
     }
+    .bottomPipe{
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        bottom: 2%;
+        z-index: 1;
+        width: 100%;
+    }
+    .pipeSection{
+        width: 22%;
+    }
+    .miniPipe{
+        display: flex;
+        height: 30px;
+        align-items: center;
+    }
+    .bumper{
+        background-color: $greyy;
+        height: 40px;
+        width: 9%;
+        margin: 1px;
+    }
+    .letter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $greyy;
+        height: 100%;
+        width: 80%;
+    }
+    .description{
+        text-align: center;
+    }
+    .bluish{
+        background-color: $bluish;
+    }
 }
