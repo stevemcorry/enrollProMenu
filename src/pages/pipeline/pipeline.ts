@@ -173,7 +173,6 @@ export class Pipeline implements OnInit {
     this.title = 'Names List';
   }
   customerPipe = () => {
-    console.log('its working')
     this.slides = [];
     this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
