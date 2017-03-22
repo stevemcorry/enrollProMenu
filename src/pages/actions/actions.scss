@@ -13,7 +13,8 @@ page-actions {
         background-size: contain;
         width: 25px;
         height: 25px;
-        margin: 5px 5px 10px 5px;
+        margin: 5px 5px 0px 5px;
+        float: right;
     }
     .dimmer{
         z-index: -50;
@@ -84,14 +85,14 @@ page-actions {
         margin: 2% 10px 0 5px;
     }
     .addButton{
-        background-image: url('../assets/img/actions/ACTIONSaddaction.png');
+        background-image: url('../assets/img/newIcons/Asset 67.png');
         background-repeat: no-repeat;
         background-size: contain;
         height: 60px;
         width: 60px;
     }
     .addButtonActive{
-        background-image: url('../assets/img/actions/ACTIONScancel.png');
+        background-image: url('../assets/img/newIcons/Asset 89.png');
         background-repeat: no-repeat;
     }
     .fab-ios{
