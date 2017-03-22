@@ -31,11 +31,17 @@ export class Pipeline implements OnInit {
   }
   slideChange(){
     if(this.pipeSlider._activeIndex <= 2){
-      this.title = 'Names List'
-    } else if(this.pipeSlider._activeIndex > 2 && this.pipeSlider._activeIndex <= 6){
+      this.title = 'Names List';
+      this.pipeColor(0);
+    } else if(this.pipeSlider._activeIndex > 2 && this.pipeSlider._activeIndex <= 4){
+      this.pipeColor(1);
       this.title = 'Enrollment'
-    } else if (this.pipeSlider._activeIndex > 6){
+    } else if (this.pipeSlider._activeIndex === 5){
       this.title = 'Customer'
+      this.pipeColor(2);
+    } else if (this.pipeSlider._activeIndex >= 6 && this.pipeSlider._activeIndex <= 8){
+      this.title = 'Customer'
+      this.pipeColor(3);
     }
   }
   constructor(public nav: NavController, public modalCtrl: ModalController, private getService: GetService, public events: Events) {
@@ -56,7 +62,7 @@ export class Pipeline implements OnInit {
       this.leadsPipe();
     })
     this.events.subscribe('enrollmentsPipe', () =>{
-      this.enrollmentsPipe();
+      this.leadsPipe();
     })
     this.events.subscribe('customerPipe', () =>{
       this.customerPipe();
@@ -131,7 +137,7 @@ export class Pipeline implements OnInit {
     this.slides = [];
     this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {
-        if (x.name) {
+        if (x.id <= 7) {
           this.getContactPosition();
           this.goToSlide(0);
           let z = x.contacts.length;
@@ -150,7 +156,7 @@ export class Pipeline implements OnInit {
     this.slides = [];
     this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {
-        if (x.name) {
+        if (x.id <= 7) {
           this.getContactPosition();
           this.goToSlide(0);
           let z = x.contacts.length;
@@ -166,33 +172,14 @@ export class Pipeline implements OnInit {
     })
     this.title = 'Names List';
   }
-  enrollmentsPipe = () => {
-    this.slides = [];
-    this.pipelineSteps.filter((x)=>{
-      if(this.slides.indexOf(x) === -1){
-        if( x.name) {
-          this.getContactPosition();
-          this.goToSlide(3);
-          let z = x.contacts.length;
-          let obj = {
-            contacts: x.contacts,
-            id: x.id,
-            name: x.name,
-            number: z
-          }
-          this.slides.push(obj);
-        }
-      }
-    })
-    this.title = 'Enrollment';
-  }
   customerPipe = () => {
+    console.log('its working')
     this.slides = [];
     this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
-        if( x.name) {
+        if(x.id == 7 || x.id == 8 || x.id == 13 || x.id == 14) {
           this.getContactPosition();
-          this.goToSlide(7)
+          this.goToSlide(0);
           let z = x.contacts.length;
           let obj = {
             contacts: x.contacts,
@@ -210,9 +197,9 @@ export class Pipeline implements OnInit {
     this.slides = [];
     this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
-        if( x.name) {
+        if(x.id >= 7 && x.id <= 12) {
           this.getContactPosition();
-          this.goToSlide(10)
+          this.goToSlide(0)
           let z = x.contacts.length;
           let obj = {
             contacts: x.contacts,
