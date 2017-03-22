@@ -8,7 +8,7 @@ page-actions {
         margin: 5px 5px 10px 5px;
     }
     .search{
-        background-image: url('../assets/img/header/HEADERsearch.png');
+        background-image: url('../assets/img/newIcons/Asset 24.png');
         background-repeat: no-repeat;
         background-size: contain;
         width: 25px;
@@ -56,25 +56,32 @@ page-actions {
         font-family: 'brandon-light';
     }
     .text{
-        background-image: url('../assets/img/actions/ACTIONStext.png');
+        background-image: url('../assets/img/newIcons/Asset 35.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 40px;
-        margin: 3% 0 0 2px;
+        width: 30px;
+        margin: 2% 10px 0 5px;
     }
     .email{
-        background-image: url('../assets/img/actions/ACTIONSEmail.png');
+        background-image: url('../assets/img/newIcons/Asset 53.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 40px;
-        margin: 3% 0 0 2px;
+        width: 30px;
+        margin: 2% 10px 0 5px;
     }
     .call{
-        background-image: url('../assets/img/actions/ACTIONScall.png');
+        background-image: url('../assets/img/newIcons/Asset 59.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 50px;
-        margin: 3% 0 0 2px;
+        width: 30px;
+        margin: 2% 10px 0 5px;
+    }
+    .meet{
+        background-image: url('../assets/img/newIcons/Asset 64.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 30px;
+        margin: 2% 10px 0 5px;
     }
     .addButton{
         background-image: url('../assets/img/actions/ACTIONSaddaction.png');
