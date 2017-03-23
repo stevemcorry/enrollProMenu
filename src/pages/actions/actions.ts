@@ -68,6 +68,20 @@ export class Actions implements OnInit{
   openSpecificAction(action){
     this.navCtrl.push(SpecificAction, {action: action});
   }
+  dateCheck(x){
+    let date = (new Date()).toISOString().slice(0,10).replace(/-/g,"")
+    let a = x.slice(0,4)
+    let b = x.slice(5,7)
+    let c = x.slice(8,10)
+    let z = a+b+c;
+    if(z > date){
+      return '#768189'
+    } else if (z == date){
+      return '#1A9199'
+    } else if (z < date){
+      return '#E55F61'
+    }
+  }
   statusCheck(stat){
     if(stat){
       return "lightgreen"
@@ -89,10 +103,44 @@ export class Actions implements OnInit{
   }
   classCheck(x){
     let action = x.action_type.id
+    let date = (new Date()).toISOString().slice(0,10).replace(/-/g,"")
+    let a = x.due_date.slice(0,4)
+    let b = x.due_date.slice(5,7)
+    let c = x.due_date.slice(8,10)
+    let z = a+b+c;
+    console.log(date, 'date', z)
     if( action === 1){
-      return 'email'
+      if(z > date){
+        return 'email'
+      } else if (z == date){
+        return 'emailBlue'
+      } else if (z < date){
+        return 'emailRed'
+      }
     } else if( action === 2){
-      return 'text'
+      if(z > date){
+        return 'text'
+      } else if (z == date){
+        return 'textBlue'
+      } else if (z < date){
+        return 'textRed'
+      }
+    } else if( action === 3){
+      if(z > date){
+        return 'call'
+      } else if (z == date){
+        return 'callBlue'
+      } else if (z < date){
+        return 'callRed'
+      }
+    } else if( action === 4){
+      if(z > date){
+        return 'meet'
+      } else if (z == date){
+        return 'meetBlue'
+      } else if (z < date){
+        return 'meetRed'
+      }
     }
   }
   flop = true;

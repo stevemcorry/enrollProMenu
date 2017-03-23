@@ -39,6 +39,8 @@ page-actions {
     }
     .task{
         display: flex;
+        height: 45px;
+        align-items: center;
         margin: 10px 0 10px 2px;
         transition: transform .2s cubic-bezier(1, 0, 1, .2);
     }
@@ -48,48 +50,116 @@ page-actions {
         background: $greeny;
     }
     .taskProspect{
-        font-family: 'brandon-regular';
+        font-family: 'junction-regular';
         font-weight: 700;
-        font-size: 20px;
+        font-size: 15px;
     }
     .taskNotes{
-        color: $greyy;
-        font-family: 'brandon-light';
+        color: $dark;
+        font-family: 'junction-light';
     }
     .text{
         background-image: url('../assets/img/newIcons/Asset 35.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 30px;
-        margin: 2% 10px 0 5px;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .textRed{
+        background-image: url('../assets/img/newIcons/Asset 33.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .textBlue{
+        background-image: url('../assets/img/newIcons/Asset 34.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
     }
     .email{
         background-image: url('../assets/img/newIcons/Asset 53.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 30px;
-        margin: 2% 10px 0 5px;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .emailRed{
+        background-image: url('../assets/img/newIcons/Asset 51.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .emailBlue{
+        background-image: url('../assets/img/newIcons/Asset 52.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
     }
     .call{
         background-image: url('../assets/img/newIcons/Asset 59.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 30px;
-        margin: 2% 10px 0 5px;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .callRed{
+        background-image: url('../assets/img/newIcons/Asset 57.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .callBlue{
+        background-image: url('../assets/img/newIcons/Asset 58.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
     }
     .meet{
         background-image: url('../assets/img/newIcons/Asset 64.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 30px;
-        margin: 2% 10px 0 5px;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .meetRed{
+        background-image: url('../assets/img/newIcons/Asset 62.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .meetBlue{
+        background-image: url('../assets/img/newIcons/Asset 63.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
     }
     .addButton{
         background-image: url('../assets/img/newIcons/Asset 67.png');
         background-repeat: no-repeat;
         background-size: contain;
-        height: 60px;
-        width: 60px;
+        height: 80px;
+        width: 80px;
     }
     .addButtonActive{
         background-image: url('../assets/img/newIcons/Asset 89.png');

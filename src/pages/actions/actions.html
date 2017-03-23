@@ -16,7 +16,7 @@
     <div (click)="openSpecificAction(action)" class="{{classCheck(action)}}"></div>
     <div class="spacing">
       <div (click)="openSpecificAction(action)" class="actionBody">
-        <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
+        <div class="taskProspect" [style.color]="dateCheck(action.due_date)">{{action.action_type.name}} {{action.contact.first_name}}</div>
         <div class="taskNotes">{{action.due_date}}</div>
       </div>
       <div class="statusCircle" [style.background-color]="statusCheck(action.animate)" (click)="action.animate = true; completeAction(action.id)"></div>
