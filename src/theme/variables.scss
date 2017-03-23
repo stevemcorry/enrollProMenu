@@ -81,3 +81,35 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+//Junction
+@font-face{
+    font-family: "junction-bold";
+    src: url('../assets/fonts/Junction/Junction-bold.otf') format('opentype');
+}
+@font-face{
+    font-family: "junction-light";
+    src: url('../assets/fonts/Junction/Junction-light.otf') format('opentype');
+}
+@font-face{
+    font-family: "junction-regular";
+    src: url('../assets/fonts/Junction/Junction-regular.otf') format('opentype');
+}
+
+//Hello Beautiful
+@font-face{
+    font-family: "hello-beautiful";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautiful.otf') format('opentype');
+}
+@font-face{
+    font-family: "hello-beautiful-alternates";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautifulAlternates.ttf') format('truetype');
+}
+@font-face{
+    font-family: "hello-beautiful-marker";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautiful-Marker.otf') format('opentype');
+}
+@font-face{
+    font-family: "hello-beautiful-swashes";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautiful-Swashes.otf') format('opentype');
+}

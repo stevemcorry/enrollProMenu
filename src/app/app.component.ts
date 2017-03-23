@@ -32,8 +32,8 @@ export class MyApp implements OnInit{
       { title: 'Goals', component: Goals },
       { title: 'Pipeline', component: Pipeline },
       { title: 'Marketing', component: Marketing },
-      { title: 'More', component: More },
-      { title: 'Messages', component: Messages },
+      { title: 'Messaging', component: Messages },
+      { title: 'Settings', component: More },
     ];
 
   }

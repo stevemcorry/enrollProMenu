@@ -1,23 +1,90 @@
 // http://ionicframework.com/docs/v2/theming/
+
+// MENU STYLES
 .menuHeader{
     background-color: $dark;
+    padding-left: 0px !important;
 }
 .whiteMenuHeader{
     color: white;
+    font: 100 25px 'junction-light';
 }
 .menuContent{
     background-color: $dark;
+    margin-top: 20px;
 }
 .menuItem{
     background-color: $dark;
     color: white;
+    margin: 15px 0 15px 0;
 }
 .menuItem .item-inner{
     border-bottom: none !important;
+    background-image: none !important;
+}
+.menuItem .label{
+    display: flex;
+    align-items: center;
 }
 .item-block:last-child{
     border-bottom: none !important;
 }
+.item-block:first-child{
+    border-top: none !important;
+}
+.Actions{
+        background-image: url('../assets/img/newIcons/Asset 80.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 0 25px 0 10px;
+}
+.Goals{
+        background-image: url('../assets/img/newIcons/Asset 81.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 0 25px 0 10px;
+}
+.Pipeline{
+        background-image: url('../assets/img/newIcons/Asset 82.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 0 25px 0 10px;
+        transform: translateY(45%);
+}
+.Marketing{
+        background-image: url('../assets/img/newIcons/Asset 83.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 0 25px 0 10px;
+}
+.Messaging{
+        background-image: url('../assets/img/newIcons/Asset 85.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 0 25px 0 10px;
+}
+.Settings{
+        background-image: url('../assets/img/newIcons/Asset 86.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 0 25px 0 10px;
+}
+
+
+//GLOBAL STYLES
+
 .icons{
     cursor: pointer;
     padding: 0px 10px 0 10px;
@@ -27,6 +94,9 @@
 .toolbar-background {
     background-color: $greyy;
     border-style: none !important;
+}
+.menuToggle{
+    color: $dark
 }
 
 // App Global Sass
