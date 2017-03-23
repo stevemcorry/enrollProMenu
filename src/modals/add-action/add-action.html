@@ -1,32 +1,43 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    <div class="icons" (click)="dismiss()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </div>
     <ion-title>Add Action</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="addProspect">
     <div class="iconList">
+      <div class="labelIcon">
         <div [ngClass]="{callOn: callOn}" (click)="newAction.action_type = 3; callOn=true; emailOn=false; textOn=false; meetOn=false;" class="call"></div>
+        <div class="labels" [ngClass]="{labelsOn: callOn}">Call</div>
+      </div>
+      <div class="labelIcon">
         <div [ngClass]="{textOn: textOn}" (click)="newAction.action_type = 2; textOn=true; emailOn=false; callOn=false; meetOn=false;" class="text"></div>
+        <div class="labels" [ngClass]="{labelsOn: textOn}">Text</div>
+      </div>
+      <div class="labelIcon">
         <div [ngClass]="{emailOn: emailOn}" (click)="newAction.action_type = 1; emailOn=true; textOn=false; callOn=false; meetOn=false;" class="email"></div>
-        <div [ngClass]="{meetOn: meetOn}" (click)="newAction.action_type = 3; meetOn=true; emailOn=false; textOn=false; callOn=false; log(newAction)" class="meet"></div>
+        <div class="labels" [ngClass]="{labelsOn: emailOn}">Email</div>
+      </div>
+      <div class="labelIcon">
+        <div [ngClass]="{meetOn: meetOn}" (click)="newAction.action_type = 4; meetOn=true; emailOn=false; textOn=false; callOn=false; log(newAction)" class="meet"></div>
+        <div class="labels" [ngClass]="{labelsOn: meetOn}">Meet</div>
+      </div>
     </div>
-    <ion-item>
-      <ion-label>Name</ion-label>
+    <ion-item class="nameChoose">
+      <ion-label>Name:</ion-label>
       <ion-select [(ngModel)]="newAction.contact" multiple="false">
         <ion-option *ngFor="let c of contacts" value="{{c.id}}">{{c.first_name}} {{c.last_name}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-        <ion-label>DUE DATE:</ion-label>
+        <ion-label>Due Date:</ion-label>
         <ion-datetime displayFormat="MMM/DD/YYYY" pickerFormat="MMM DD YYYY"  min="2016" max="2020-12-31"  [(ngModel)]="newAction.due_date"></ion-datetime>
     </ion-item>
     <textarea type="text" [(ngModel)]="newAction.notes"placeholder="Notes"></textarea>
-    <div>
-      <button ion-button (click)="dismiss()">CANCEL</button>
-      <button ion-button (click)="addAction()">ADD ACTION</button>
+    <div (click)="addAction()" class="junctionLight save">
+      Save
     </div>
 </ion-content>

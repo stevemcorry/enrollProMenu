@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
-import { Platform, NavParams, ViewController, Events, AlertController} from 'ionic-angular';
+import { Platform, ViewController, Events, AlertController} from 'ionic-angular';
 
 @Component({
   selector: 'page-add-action',
@@ -10,10 +10,7 @@ import { Platform, NavParams, ViewController, Events, AlertController} from 'ion
 
 })
 export class AddAction implements OnInit{
-    constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events, public alertCtrl: AlertController){
-        this.contact = params.get('contact');
-    }
-    contact;
+    constructor(public viewCtrl: ViewController, public platform: Platform, public getService: GetService, public postService: PostService, public events: Events, public alertCtrl: AlertController){ }
     action;
     actionType:any = "What do you want to do?";
     newAction = {
@@ -43,8 +40,7 @@ export class AddAction implements OnInit{
         console.log(this.newAction)
     }
     addAction(){
-        this.newAction.contact = this.contact.id
-        if(this.newAction.due_date && this.newAction.notes && this.newAction.action_type){
+        if(this.newAction.due_date && this.newAction.notes && this.newAction.action_type && this.newAction.contact){
             this.getService.getStorage().then(key => {
                 this.postService.addAction(key, this.newAction).subscribe((res) => {
                     this.events.publish('actionAdded');

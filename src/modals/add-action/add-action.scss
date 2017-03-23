@@ -1,9 +1,8 @@
 page-add-action{
     textarea{
         height: 100px;
-        width: 85%;
+        width: 95%;
         border: 3px solid lightgrey;
-        border-radius: 15px;
         padding: 5px;
         resize: none;
     }
@@ -22,68 +21,93 @@ page-add-action{
         display: flex;
         justify-content: space-around;
     }
+    .labelIcon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .text{
-        background-image: url('../assets/img/newIcons/Asset 35.png');
+        background-image: url('../assets/img/newIcons/Asset 65.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
     }
     .email{
-        background-image: url('../assets/img/newIcons/Asset 53.png');
+        background-image: url('../assets/img/newIcons/Asset 68.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
     }
     .call{
-        background-image: url('../assets/img/newIcons/Asset 59.png');
+        background-image: url('../assets/img/newIcons/Asset 60.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
+        transform: translateX(13px);
     }
     .meet{
-        background-image: url('../assets/img/newIcons/Asset 64.png');
+        background-image: url('../assets/img/newIcons/Asset 72.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
     }
     .emailOn{
         background-image: url('../assets/img/newIcons/Asset 51.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
     }
     .textOn{
         background-image: url('../assets/img/newIcons/Asset 33.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
     }
     .callOn{
         background-image: url('../assets/img/newIcons/Asset 57.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
+        transform: translateX(13px);
     }
     .meetOn{
         background-image: url('../assets/img/newIcons/Asset 62.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 25px;
-        height: 25px;
-        margin: 0% 10px 0 5px;
+        width: 40px;
+        height: 40px;
+    }
+    .labels{
+        margin-top: 8px;
+        color: $greyy;
+        font: 100 16px 'junction-light';
+    }
+    .save{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-end;
+        color: $dark;
+        height: 30px;
+        width: 60px;
+        background-color: $greyy;
+        margin-right: 10px;
+    }
+    .labelsOn{
+        color: $redd;
+    }
+    .label, .datetime-text{
+        color: $dark;
+    }
+    .item-inner{
+        padding: 0 5px 0 10px !important;
+        border: 0.55px solid $greyy;
     }
 }

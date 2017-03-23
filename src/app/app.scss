@@ -89,14 +89,27 @@
     cursor: pointer;
     padding: 0px 10px 0 10px;
     font-size: 30px;
-    color: black;
+    color: $dark;
 }
 .toolbar-background {
     background-color: $greyy;
     border-style: none !important;
 }
+.toolbar-title{
+    font: 100 30px 'junction-light';
+    color: $bluish;
+}
 .menuToggle{
     color: $dark
+}
+.junctionLight{
+    font-family: 'junction-light'
+}
+.junctionRegular{
+    font-family: "junction-regular";
+}
+.junctionBold{
+    font-family:  'junction-bold';
 }
 
 // App Global Sass
