@@ -22,6 +22,14 @@ export class AddAction implements OnInit{
         due_date: new Date().toISOString(),
         notes: ""
     };
+    contacts;
+    getContacts(){
+        this.getService.getStorage().then(key => {
+            this.getService.getContacts(key).subscribe((res)=>{
+                this.contacts = res;
+            })
+        })
+    }
     checkActionType(){
         if(this.actionType == 1){
             this.actionType = 'Email';
@@ -30,6 +38,9 @@ export class AddAction implements OnInit{
         } else if(this.actionType == 3){
             this.actionType = 'Call';
         }
+    }
+    log(x){
+        console.log(this.newAction)
     }
     addAction(){
         this.newAction.contact = this.contact.id
@@ -47,38 +58,38 @@ export class AddAction implements OnInit{
             alert.present();
         }
     }
-    presentAlert() {
-        let alert = this.alertCtrl.create();
-        alert.setTitle('Choose Action')
-        alert.addInput({
-            type: 'radio',
-            label: 'Email',
-            value: '1',
-            checked: true
-        });
-        alert.addInput({
-            type: 'radio',
-            label: 'Text',
-            value: '2'
-        });
-        alert.addButton('Cancel');
-        alert.addButton({
-            text: 'Ok',
-            handler: data => {
-                this.actionType = data;
-                this.newAction.action_type = data;
-                this.checkActionType();
-            }
-        });
-
-
-        alert.present();
-    }
+    // presentAlert() {
+    //     let alert = this.alertCtrl.create();
+    //     alert.setTitle('Choose Action')
+    //     alert.addInput({
+    //         type: 'radio',
+    //         label: 'Email',
+    //         value: '1',
+    //         checked: true
+    //     });
+    //     alert.addInput({
+    //         type: 'radio',
+    //         label: 'Text',
+    //         value: '2'
+    //     });
+    //     alert.addButton('Cancel');
+    //     alert.addButton({
+    //         text: 'Ok',
+    //         handler: data => {
+    //             this.actionType = data;
+    //             this.newAction.action_type = data;
+    //             this.checkActionType();
+    //         }
+    //     });
+    //     alert.present();
+    // }
+    
     dismiss() {
         this.viewCtrl.dismiss();
     }
 
     ngOnInit(){
+        this.getContacts();
     }
     
 }

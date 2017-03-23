@@ -4,7 +4,7 @@ import { NavController, ModalController, Events, FabContainer, NavParams } from 
 import { PutService } from '../../services/putService';
 import { AddContact } from '../../modals/add-contact/add-contact';
 import { SpecificAction } from '../../modals/specific-action/specific-action';
-import { ChooseActionContact } from '../../modals/choose-action-contact/choose-action-contact';
+import { AddAction } from '../../modals/add-action/add-action';
 
 @Component({
   selector: 'page-actions',
@@ -62,7 +62,7 @@ export class Actions implements OnInit{
     modal.present();
   }
   chooseActionContact(){
-    let modal = this.modalCtrl.create(ChooseActionContact);
+    let modal = this.modalCtrl.create(AddAction);
     modal.present();
   }
   openSpecificAction(action){
@@ -108,7 +108,6 @@ export class Actions implements OnInit{
     let b = x.due_date.slice(5,7)
     let c = x.due_date.slice(8,10)
     let z = a+b+c;
-    console.log(date, 'date', z)
     if( action === 1){
       if(z > date){
         return 'email'

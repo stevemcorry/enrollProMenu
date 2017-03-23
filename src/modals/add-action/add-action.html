@@ -3,22 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Actions</ion-title>
+    <ion-title>Add Action</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="addProspect">
-        <button ion-button full (click)="presentAlert()">{{actionType}}</button>
-    <textarea type="text" [(ngModel)]="newAction.notes"placeholder="Notes"></textarea>
+    <div class="iconList">
+        <div [ngClass]="{callOn: callOn}" (click)="newAction.action_type = 3; callOn=true; emailOn=false; textOn=false; meetOn=false;" class="call"></div>
+        <div [ngClass]="{textOn: textOn}" (click)="newAction.action_type = 2; textOn=true; emailOn=false; callOn=false; meetOn=false;" class="text"></div>
+        <div [ngClass]="{emailOn: emailOn}" (click)="newAction.action_type = 1; emailOn=true; textOn=false; callOn=false; meetOn=false;" class="email"></div>
+        <div [ngClass]="{meetOn: meetOn}" (click)="newAction.action_type = 3; meetOn=true; emailOn=false; textOn=false; callOn=false; log(newAction)" class="meet"></div>
+    </div>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-select [(ngModel)]="newAction.contact" multiple="false">
+        <ion-option *ngFor="let c of contacts" value="{{c.id}}">{{c.first_name}} {{c.last_name}}</ion-option>
+      </ion-select>
+    </ion-item>
     <ion-item>
         <ion-label>DUE DATE:</ion-label>
         <ion-datetime displayFormat="MMM/DD/YYYY" pickerFormat="MMM DD YYYY"  min="2016" max="2020-12-31"  [(ngModel)]="newAction.due_date"></ion-datetime>
     </ion-item>
-    <!--<div class="iconList">
-        <ion-icon [ngClass]="{emailOn: emailOn}" (click)="newAction.action_type = 1; emailOn=true; textOn=false; callOn=false" name="mail" class="sendOptions"></ion-icon>
-        <ion-icon [ngClass]="{textOn: textOn}" (click)="newAction.action_type = 2; textOn=true; emailOn=false; callOn=false;"  name="chatbubbles" class="sendOptions"></ion-icon>
-        <ion-icon [ngClass]="{callOn: callOn}" (click)="newAction.action_type = 3; callOn=true; emailOn=false; textOn=false;" name="call" class="sendOptions"></ion-icon>
-    </div>-->
+    <textarea type="text" [(ngModel)]="newAction.notes"placeholder="Notes"></textarea>
     <div>
       <button ion-button (click)="dismiss()">CANCEL</button>
       <button ion-button (click)="addAction()">ADD ACTION</button>

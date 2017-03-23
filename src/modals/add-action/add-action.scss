@@ -22,13 +22,68 @@ page-add-action{
         display: flex;
         justify-content: space-around;
     }
+    .text{
+        background-image: url('../assets/img/newIcons/Asset 35.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .email{
+        background-image: url('../assets/img/newIcons/Asset 53.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .call{
+        background-image: url('../assets/img/newIcons/Asset 59.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .meet{
+        background-image: url('../assets/img/newIcons/Asset 64.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
     .emailOn{
-        color: lightgreen;
+        background-image: url('../assets/img/newIcons/Asset 51.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
     }
     .textOn{
-        color: lightgreen;
+        background-image: url('../assets/img/newIcons/Asset 33.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
     }
     .callOn{
-        color: lightgreen;
+        background-image: url('../assets/img/newIcons/Asset 57.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
+    }
+    .meetOn{
+        background-image: url('../assets/img/newIcons/Asset 62.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 0% 10px 0 5px;
     }
 }
