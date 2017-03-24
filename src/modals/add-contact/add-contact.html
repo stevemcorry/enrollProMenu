@@ -5,7 +5,7 @@
         <div class="headerDiv">CANCEL</div>
       </div>
     </ion-buttons>
-    <ion-title>new contact</ion-title>
+    <ion-title>New Contact</ion-title>
     <ion-buttons end>
       <div (click)="addContact(contact)">
         <div class="headerDiv">SAVE</div>
@@ -16,22 +16,55 @@
 
 <ion-content>
     <div class="inputs">
-      <input type="text" required placeholder="First Name" [(ngModel)]="contact.first_name">
-      <input type="text" required placeholder="Last Name" [(ngModel)]="contact.last_name">
-      <input type="tel" required placeholder="Phone Number" [(ngModel)]="contact.phone">
-      <input type="email" required placeholder="Email" [(ngModel)]="contact.email">
-      <ion-slides #pipeSlider class="choosePipe" #choosePipe>
-        <ion-slide *ngFor="let slide of slides" class="slides">
-        <div class="slideName">{{slide.name}}</div>
-        </ion-slide>
-      </ion-slides>
-      <div class="pagerBar">
-        <div *ngFor="let slide of slides" class="pagerBox">
-          <div [ngClass]="{activeFlag: getIndex(slide)}" class="pagerFlag"></div>
-          <div class="pagerArrow" [ngClass]="{activeArrow: getIndex(slide)}"></div>
-        </div>
+      <div class="inputSection">
+        <div>First Name:</div>
+        <input type="text" required [(ngModel)]="contact.first_name">
       </div>
-      <input type="text" placeholder="Custom Tag" [(ngModel)]="contact.custom_tag">
+      <div class="inputSection">
+        <div>Last Name:</div>
+        <input type="text" required [(ngModel)]="contact.last_name">
+      </div>
+      <div class="inputSection">
+        <div>Mobile:</div>
+        <input type="tel" required [(ngModel)]="contact.phone">
+      </div>
+      <div class="inputSection">
+        <div>Email:</div>
+        <input type="email" required [(ngModel)]="contact.email">
+      </div>
+      <div class="inputSection">
+        <div>Tag:</div>
+        <ion-item class="nameChoose">
+          <ion-select [(ngModel)]="contact.tags" multiple="false">
+            <ion-option *ngFor="let t of tags" value="{{t.id}}">{{t.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div class="inputSection">
+        <div>Role:</div>
+        <input type="text" [(ngModel)]="contact.role">
+      </div>
+      <div>
+        <ion-slides #pipeSlider class="choosePipe" #choosePipe slidesPerView="3">
+          <ion-slide>
+          </ion-slide>
+          <ion-slide *ngFor="let slide of slides" class="slides">
+            <div class="pipe">
+              <div class="bumper" [ngClass]="{activePipe: getIndex(slide)}"></div>
+              <div class="slideName" [ngClass]="{activePipe: getIndex(slide)}">{{slide.name}}</div>
+              <div class="bumper" [ngClass]="{activePipe: getIndex(slide)}"></div>
+            </div>
+          </ion-slide>
+          <ion-slide>
+          </ion-slide>
+        </ion-slides>
+        <!--<div class="pagerBar">
+          <div *ngFor="let slide of slides" class="pagerBox">
+            <div [ngClass]="{activeFlag: getIndex(slide)}" class="pagerFlag"></div>
+            <div class="pagerArrow" [ngClass]="{activeArrow: getIndex(slide)}"></div>
+          </div>
+        </div>-->
+      </div>
     </div>
     <div class="buttons">
       <button class="cancel" ion-button (click)="dismiss()">CANCEL</button>

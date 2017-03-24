@@ -1,10 +1,20 @@
 page-add-contact{
     input{
-        height: 15%;
+        height: 100%;
+        width: 65%;
         margin: 2px;
-        border: 3px solid lightgrey;
+        border: 3px solid $greyy;
         padding: 10px;
-        background: #EAEAEA;
+        background: $greyy;
+    }
+    .inputSection{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10%;
+        width: 100%;
+        font: 15px 'junction-light';
+        color: $bluish;
     }
     .scroll-content{
         overflow-y: scroll;
@@ -38,12 +48,38 @@ page-add-contact{
         height: 25%;
         justify-content: space-around;
     }
+    .nameChoose{
+        width: 65%;
+        padding-left: 0 !important;
+        height: 100%;
+    }    
+    .item-inner{
+        padding: 0 5px 0 10px !important;
+        border: 0.55px solid $greyy;
+        background-color: $greyy;
+    }
     //pager
     .slides{
-
+        height: 40px;
+    }
+    .pipe{
+        display: flex;
+        align-items: center;
+        height: 30px;
     }
     .slideName{
-
+        height: 75%;
+        width: 90%;
+        background-color: $greyy;
+    }
+    .bumper{
+        width: 4.5%;
+        height: 100%;
+        background-color: $greyy;
+        margin: 1px;
+    }
+    .activePipe{
+        background-color: $bluish
     }
     .pagerBar{
         display: flex;
@@ -85,7 +121,7 @@ page-add-contact{
         border-left: 5px solid lightgreen;
     }
     .choosePipe{
-        height: 20px;
+        //height: 20px;
     }
     .position{
         font-size: 23px;

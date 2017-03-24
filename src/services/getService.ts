@@ -91,7 +91,15 @@ export class GetService implements OnInit{
     getSpecificJobs(key, id){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/jobs/' + id , {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/jobs/' + id , {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
+    }
+    getTags(key){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://api.enroll.pro/api/contacts/tags', {headers: authHeader})
             .map(data=>{
                 return data.json();
             })

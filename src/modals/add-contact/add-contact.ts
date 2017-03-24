@@ -20,19 +20,31 @@ export class AddContact implements OnInit{
     };
     pipelineSteps;
     slides;
+    tags;
     
     getPipelinePositions = () => {
+        this.slides = [];
         this.getService.getStorage().then(key => {
             this.getService.getPipelinePositions(key).subscribe(res => {
-                this.slides = res;
-                console.log(res);
+                res.filter(x =>{
+                    if(this.slides.indexOf(x) === -1) {
+                        if (x.id <= 7) {
+                        let z = x.contacts.length;
+                        let obj = {
+                            contacts: x.contacts,
+                            id: x.id,
+                            name: x.name,
+                            number: z
+                        }
+                        this.slides.push(obj);
+                        }
+                    }
+                })
             });
         })
     }
     getIndex(x){
         if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
-            return true;
-        } else if(this.choosePipe.getActiveIndex() >= this.slides.indexOf(x)){
             return true;
         } else {
             return false;
@@ -40,6 +52,14 @@ export class AddContact implements OnInit{
     }
     dismiss() {
         this.viewCtrl.dismiss();
+    }
+    getTags(){
+        this.getService.getStorage().then(key =>{
+            this.getService.getTags(key).subscribe(res => {
+                console.log(res, 'tags');
+                this.tags = res;
+            })
+        })
     }
     addContact(contact){
         if(contact.first_name && contact.last_name && contact.phone && contact.email){
@@ -72,6 +92,7 @@ export class AddContact implements OnInit{
   }
   ngOnInit(){
       this.getPipelinePositions();
+      this.getTags();
   }
 
 }
