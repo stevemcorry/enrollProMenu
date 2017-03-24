@@ -10,23 +10,36 @@
 </ion-header>
 
 <ion-content class="addProspect">
-    <div class="actionHead">
-      <div class="{{classCheck(action)}}"></div>
-      <div>
-        <div class="actionName">{{action.action_type.name}}</div>
+  <div class="iconList">
+      <div class="labelIcon">
+        <div [ngClass]="{callOn: callOn}" (click)="action.action_type = 3; callOn=true; emailOn=false; textOn=false; meetOn=false;" class="call"></div>
+        <div class="labels" [ngClass]="{labelsOn: callOn}">Call</div>
+      </div>
+      <div class="labelIcon">
+        <div [ngClass]="{textOn: textOn}" (click)="action.action_type = 2; textOn=true; emailOn=false; callOn=false; meetOn=false;" class="text"></div>
+        <div class="labels" [ngClass]="{labelsOn: textOn}">Text</div>
+      </div>
+      <div class="labelIcon">
+        <div [ngClass]="{emailOn: emailOn}" (click)="action.action_type = 1; emailOn=true; textOn=false; callOn=false; meetOn=false;" class="email"></div>
+        <div class="labels" [ngClass]="{labelsOn: emailOn}">Email</div>
+      </div>
+      <div class="labelIcon">
+        <div [ngClass]="{meetOn: meetOn}" (click)="action.action_type = 4; meetOn=true; emailOn=false; textOn=false; callOn=false; log(action)" class="meet"></div>
+        <div class="labels" [ngClass]="{labelsOn: meetOn}">Meet</div>
       </div>
     </div>
-    <div class="actionContact">
-      <div class="contactName">{{action.contact.first_name}} {{action.contact.last_name}}</div>
-      <div class="dueDate">Due Date: {{action.due_date}}</div>
-    </div>
-    <div class="note">
-      <div class="notes">Notes:</div>
-      <div class="noteContent">{{note}}</div>
-    </div>
-    <div class="iconList">
-        <div [ngClass]="{emailOn: emailOn}" (click)="emailOn=true; textOn=false; callOn=false; sendEmail()" class="emailsend"></div>
-        <div [ngClass]="{textOn: textOn}" (click)="textOn=true; emailOn=false; callOn=false; sendText()" class="textsend"></div>
-        <div [ngClass]="{callOn: callOn}" (click)="callOn=true; emailOn=false; textOn=false; callNumber()" class="callsend"></div>
+    <ion-item class="nameChoose">
+      <ion-label>Name:</ion-label>
+      <ion-select [(ngModel)]="action.contact.name" multiple="false">
+        <ion-option *ngFor="let c of contacts" value="{{c.id}}">{{c.first_name}} {{c.last_name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Due Date:</ion-label>
+        <ion-datetime displayFormat="MMM/DD/YYYY" pickerFormat="MMM DD YYYY"  min="2016" max="2020-12-31"  [(ngModel)]="action.due_date"></ion-datetime>
+    </ion-item>
+    <textarea type="text" [(ngModel)]="action.notes"placeholder="Notes"></textarea>
+    <div (click)="addAction()" class="junctionLight save">
+      Save
     </div>
 </ion-content>

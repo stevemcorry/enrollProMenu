@@ -17,7 +17,9 @@ export class SpecificAction implements OnInit{
     action = {
         something: 2,
         id: 2,
+        notes: '',
         contact: {
+            name: "",
             id: 0
         }
     };
@@ -46,15 +48,24 @@ export class SpecificAction implements OnInit{
             .then(() => console.log('Launched dialer!'))
             .catch(() => alert('Cannot Call Number'));
     }
+    contacts;
+    getContacts(){
+        this.getService.getStorage().then(key => {
+            this.getService.getContacts(key).subscribe((res)=>{
+                this.contacts = res;
+            })
+        })
+    }
     getAction(id){
         this.getService.getStorage().then(key => {
             this.getService.getSpecificActions(key, id).subscribe(res=>{
-                this.note = res.notes;
+                console.log(res,'Actions')
+                this.action.notes = res.notes;
             })
             this.getService.getSpecificContact(key, this.action.contact.id).subscribe(data=>{
                 this.phone = data.phone;
                 this.email = data.email;
-                this.name = data.first_name;
+                this.action.contact.name = data.first_name + ' ' + data.last_name;
             })
         })
     }

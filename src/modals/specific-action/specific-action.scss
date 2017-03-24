@@ -1,80 +1,16 @@
 page-specific-action{
+    textarea{
+        height: 100px;
+        width: 95%;
+        border: 3px solid lightgrey;
+        padding: 5px;
+        resize: none;
+    }
     .scroll-content{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-    }
-    .actionHead{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 90%;
-        height: 100px;
-        border: 3px solid grey;
-        border-radius: 10px;
-        background: lightgrey
-    }
-    .actionIcon{
-        font-size: 50px;
-        color: black;
-    }
-    .email{
-        background-image: url('../assets/img/actions/ACTIONSEmail.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position-y: center;
-        height: 50px;
-        width: 50px;
-    }
-    .text{
-        background-image: url('../assets/img/actions/ACTIONStext.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position-y: center;
-        height: 50px;
-        width: 50px;
-        margin: 3% 0 0 2%;
-    }
-    .call{
-        background-image: url('../assets/img/actions/ACTIONScall.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position-y: center;
-        height: 50px;
-        width: 50px;
-        margin: 3% 0 0 2%;
-    }
-    .actionName{
-        font-size: 40px;
-        color: green;
-    }
-    .actionContact{
-        width: 90%;
-        height: 100px;
-    }
-    .contactName{
-        font-size: 35px;
-        color: purple;
-    }
-    .dueDate{
-        font-size: 30px;
-        color: purple;
-    }
-    .note{
-        width: 90%;
-        min-height: 150px;
-        border: 3px solid grey;
-        border-radius: 10px;
-        background: lightgrey;
-        padding: 5px;
-    }
-    .notes{
-        font-size: 15px;
-    }
-    .noteContent{
-        font-size: 15px;
-        margin-top: 5px;
     }
     .sendOptions{
         font-size: 55px;
@@ -85,36 +21,93 @@ page-specific-action{
         display: flex;
         justify-content: space-around;
     }
+    .labelIcon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .text{
+        background-image: url('../assets/img/newIcons/Asset 65.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+    }
+    .email{
+        background-image: url('../assets/img/newIcons/Asset 68.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+    }
+    .call{
+        background-image: url('../assets/img/newIcons/Asset 60.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+        transform: translateX(13px);
+    }
+    .meet{
+        background-image: url('../assets/img/newIcons/Asset 72.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+    }
     .emailOn{
-        color: lightgreen;
+        background-image: url('../assets/img/newIcons/Asset 51.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 40px;
     }
     .textOn{
-        color: lightgreen;
+        background-image: url('../assets/img/newIcons/Asset 33.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 40px;
     }
     .callOn{
-        color: lightgreen;
-    }
-    .emailsend{
-        background-image: url('../assets/img/actions/ACTIONSEmail.png');
+        background-image: url('../assets/img/newIcons/Asset 57.png');
         background-repeat: no-repeat;
         background-size: contain;
-        background-position-y: center;
-        height: 40px;
         width: 40px;
+        height: 40px;
+        transform: translateX(13px);
     }
-    .textsend{
-        background-image: url('../assets/img/actions/ACTIONStext.png');
+    .meetOn{
+        background-image: url('../assets/img/newIcons/Asset 62.png');
         background-repeat: no-repeat;
         background-size: contain;
-        background-position-y: center;
-        height: 40px;
         width: 40px;
+        height: 40px;
     }
-    .callsend{
-        background-image: url('../assets/img/actions/ACTIONSCall.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 40px;
-        width: 40px;
+    .labels{
+        margin-top: 8px;
+        color: $greyy;
+        font: 100 16px 'junction-light';
+    }
+    .save{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-end;
+        color: $dark;
+        height: 30px;
+        width: 60px;
+        background-color: $greyy;
+        margin-right: 10px;
+    }
+    .labelsOn{
+        color: $redd;
+    }
+    .label, .datetime-text{
+        color: $dark;
+    }
+    .item-inner{
+        padding: 0 5px 0 10px !important;
+        border: 0.55px solid $greyy;
     }
 }
