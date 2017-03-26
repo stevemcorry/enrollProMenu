@@ -134,8 +134,6 @@ export class SpecificProspect implements OnInit{
     getIndex(x){
         if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
             return true;
-        } else if(this.choosePipe.getActiveIndex() >= this.slides.indexOf(x)){
-            return true;
         } else {
             return false;
         }

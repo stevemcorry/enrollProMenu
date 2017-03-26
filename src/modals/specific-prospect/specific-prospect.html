@@ -15,8 +15,25 @@
 </ion-header>
 
 <ion-content class="addProspect">
-  <div class="contactHeader">CONTACT INFO</div>
-  <div class="topSpecific">
+  <div class="iconList">
+      <div class="labelIcon" (click)=" customerOn=true; builderOn=false; sharerOn=false; teamOn=false;">
+        <div [ngClass]="{customerOn: customerOn}" class="customer"></div>
+        <div class="labels" [ngClass]="{labelsOn: customerOn}">Customer</div>
+      </div>
+      <div class="labelIcon" (click)=" sharerOn=true; builderOn=false; customerOn=false; teamOn=false;">
+        <div [ngClass]="{sharerOn: sharerOn}" class="sharer"></div>
+        <div class="labels" [ngClass]="{labelsOn: sharerOn}">Sharer</div>
+      </div>
+      <div class="labelIcon" (click)=" builderOn=true; sharerOn=false; customerOn=false; teamOn=false;">
+        <div [ngClass]="{builderOn: builderOn}" class="builder"></div>
+        <div class="labels" [ngClass]="{labelsOn: builderOn}">Builder</div>
+      </div>
+      <div class="labelIcon" (click)=" teamOn=true; builderOn=false; sharerOn=false; customerOn=false;">
+        <div [ngClass]="{teamOn: teamOn}" class="team"></div>
+        <div class="labels" [ngClass]="{labelsOn: teamOn}">Team Member</div>
+      </div>
+    </div>
+  <!--<div class="topSpecific">
     <div class="top info">
       <div>
         <strong>Info:</strong>
@@ -33,25 +50,45 @@
         {{contact.role.name}}
       </div>
     </div>
-  </div>
-    <div class="position">
-      <strong>PIPELINE POSITION:</strong>
-    </div>
-  <ion-slides #pipeSlider class="choosePipe" #choosePipe (ionSlideDidChange)="slideChange()">
-    <ion-slide *ngFor="let slide of slides" class="slides">
-      <div class="slideName">{{slide.name}}</div>
-    </ion-slide>
-  </ion-slides>
+  </div>-->
+  <div class="pipePager">
+    <ion-slides #pipeSlider class="choosePipe" #choosePipe slidesPerView="3">
+      <ion-slide>
+      </ion-slide>
+       <ion-slide *ngFor="let slide of slides" class="slides">
+            <div class="pipe">
+              <div class="bumper" [ngClass]="{activePipe: getIndex(slide)}"></div>
+              <div class="slideName" [ngClass]="{activePipe: getIndex(slide)}">{{slide.name}}</div>
+              <div class="bumper" [ngClass]="{activePipe: getIndex(slide)}"></div>
+            </div>
+      </ion-slide>
+      <ion-slide>
+      </ion-slide>
+    </ion-slides>
     <div class="pagerBar">
       <div *ngFor="let slide of slides" class="pagerBox">
         <div [ngClass]="{activeFlag: getIndex(slide)}" class="pagerFlag"></div>
-        <div class="pagerArrow" [ngClass]="{activeArrow: getIndex(slide)}"></div>
       </div>
     </div>
+  </div>
+  <!--<ion-slides #pipeSlider class="choosePipe" #choosePipe (ionSlideDidChange)="slideChange()">
+    <ion-slide *ngFor="let slide of slides" class="slides">
+      <div class="slideName">{{slide.name}}</div>
+    </ion-slide>
+  </ion-slides>-->
+  <div>TAGs</div>
   <div class="box">
     <div class="topBox">
-      <div class="smallBox left" [ngClass]="{leftBox: leftBox}" (click)="leftBox=false; rightBox = true; complete = 0;">ACTIONS</div>
-      <div class="smallBox right" [ngClass]="{rightBox: rightBox}" (click)="rightBox=false; leftBox = true; complete = 1">HISTORY</div>
+      <div class="smallBox" [ngClass]="{leftBox: leftBox}" (click)="leftBox=false; rightBox = true; complete = 0;">
+        <div class="left">
+          Actions
+        </div>
+      </div>
+      <div class="smallBox" [ngClass]="{rightBox: rightBox}" (click)="rightBox=false; leftBox = true; complete = 1">
+        <div class="left">
+          History
+        </div>
+      </div>
     </div>
     <div class="bottomBox">
       <div *ngFor="let action of actions | actionFilter: complete" class="action">
@@ -70,8 +107,7 @@
         </div>
       </div>
     </div>
-      <button  (click)="addAction()" color="primary" class="circleButton">
-          <ion-icon name="add"></ion-icon>
-      </button>
+      <div  (click)="addAction()" color="primary" class="circleButton">
+      </div>
   </div>
 </ion-content>
