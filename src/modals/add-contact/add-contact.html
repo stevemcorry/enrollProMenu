@@ -15,6 +15,24 @@
 </ion-header>
 
 <ion-content>
+    <div class="iconList">
+      <div class="labelIcon" (click)=" customerOn=true; builderOn=false; sharerOn=false; teamOn=false; contact.role=2">
+        <div [ngClass]="{customerOn: customerOn}" class="customer"></div>
+        <div class="labels" [ngClass]="{labelsOn: customerOn}">Customer</div>
+      </div>
+      <div class="labelIcon" (click)=" sharerOn=true; builderOn=false; customerOn=false; teamOn=false;  contact.role=3">
+        <div [ngClass]="{sharerOn: sharerOn}" class="sharer"></div>
+        <div class="labels" [ngClass]="{labelsOn: sharerOn}">Sharer</div>
+      </div>
+      <div class="labelIcon" (click)=" builderOn=true; sharerOn=false; customerOn=false; teamOn=false; contact.role = 1">
+        <div [ngClass]="{builderOn: builderOn}" class="builder"></div>
+        <div class="labels" [ngClass]="{labelsOn: builderOn}">Builder</div>
+      </div>
+      <!--<div class="labelIcon" (click)=" teamOn=true; builderOn=false; sharerOn=false; customerOn=false;">
+        <div [ngClass]="{teamOn: teamOn}" class="team"></div>
+        <div class="labels" [ngClass]="{labelsOn: teamOn}">Team Member</div>
+      </div>-->
+    </div>
     <div class="inputs">
       <div class="inputSection">
         <div>First Name:</div>
@@ -32,20 +50,8 @@
         <div>Email:</div>
         <input type="email" required [(ngModel)]="contact.email">
       </div>
-      <div class="inputSection">
-        <div>Tag:</div>
-        <ion-item class="nameChoose">
-          <ion-select [(ngModel)]="contact.tags" multiple="false">
-            <ion-option *ngFor="let t of tags" value="{{t.id}}">{{t.name}}</ion-option>
-          </ion-select>
-        </ion-item>
-      </div>
-      <div class="inputSection">
-        <div>Role:</div>
-        <input type="text" [(ngModel)]="contact.role">
-      </div>
       <div>
-        <ion-slides #pipeSlider class="choosePipe" #choosePipe slidesPerView="3">
+        <ion-slides #pipeSlider class="choosePipe" #choosePipe slidesPerView="3" (ionSlideDidChange)="setPipe()">
           <ion-slide>
           </ion-slide>
           <ion-slide *ngFor="let slide of slides" class="slides">
@@ -66,8 +72,11 @@
         </div>-->
       </div>
     </div>
+    <div class="tags">
+      <div class="tag" *ngFor="let t of tags" [ngClass]="{tagOn: t.on}" (click)="t.on = !t.on; tag(tags)">{{t.name}}</div>
+    </div>
     <div class="buttons">
-      <button class="cancel" ion-button (click)="dismiss()">CANCEL</button>
+      <button class="cancel" ion-button (click)="log()">CANCEL</button>
       <button class="save" ion-button (click)="addContact(contact)">SAVE</button>
     </div>
 </ion-content>

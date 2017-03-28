@@ -21,6 +21,7 @@ export class PostService{
         });
     }
     addContact(key, contact){
+        console.log(contact, 'post', contact.first_name, contact.tags)
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
         return this.http.post('http://api.enroll.pro/api/contacts', contact, { headers: authHeader});

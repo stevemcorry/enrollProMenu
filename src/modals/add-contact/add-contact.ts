@@ -16,7 +16,10 @@ export class AddContact implements OnInit{
         first_name: '',
         last_name: '',
         phone: '',
-        email: ''
+        email: '',
+        pipeline_position: 1,
+        role: 1,
+        tags: []
     };
     pipelineSteps;
     slides;
@@ -50,6 +53,10 @@ export class AddContact implements OnInit{
             return false;
         }
     }
+    setPipe(){
+        console.log(this.choosePipe.getActiveIndex(), 'index')
+        this.contact.pipeline_position = this.choosePipe.getActiveIndex() + 1;
+    }
     dismiss() {
         this.viewCtrl.dismiss();
     }
@@ -61,6 +68,17 @@ export class AddContact implements OnInit{
             })
         })
     }
+    log(){
+        console.log(this.contact, 'contact')
+    }
+    tag(x){
+        this.contact.tags = [];
+        for(let y of x){
+            if(y.on){
+                this.contact.tags.push(y.id);
+            }
+        }
+    }
     addContact(contact){
         if(contact.first_name && contact.last_name && contact.phone && contact.email){
             this.getService.getStorage().then(key => {
@@ -70,7 +88,10 @@ export class AddContact implements OnInit{
                         first_name: '',
                         last_name: '',
                         phone: '',
-                        email: ''
+                        email: '',
+                        pipeline_position: 0,
+                        role: 1,
+                        tags: []
                     };
                     this.events.publish('contactAdded');
                     this.dismiss();
