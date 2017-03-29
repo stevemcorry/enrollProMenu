@@ -91,6 +91,9 @@
     font-size: 30px;
     color: $dark;
 }
+.back-button{
+    display: none !important;
+}
 .toolbar-background {
     background-color: $greyy;
     border-style: none !important;

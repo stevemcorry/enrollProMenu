@@ -26,8 +26,10 @@
       </div>
       <div class="prospects">
         <div *ngFor="let prospect of prospects | filter: slide" (click)="openModal(prospect.contact)">
-        <div class="prospect">{{prospect.contact.first_name}} {{prospect.contact.last_name}}<div class="smallCircle" [style.background-color]="dotColor(prospect.contact.actions_status)"></div></div>
-        <div class="line"></div>
+          <div class="prospect" [style.color]="dotColor(prospect.contact.actions_status)">{{prospect.contact.first_name}} {{prospect.contact.last_name}}
+            <div class="smallCircle" [style.background-color]="dotColor(prospect.contact.actions_status)"></div>
+          </div>
+          <div class="line"></div>
         </div>
       </div>
     </ion-slide>

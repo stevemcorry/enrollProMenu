@@ -11,7 +11,7 @@ page-pipeline {
         margin: 5px 5px 10px 5px;
     }
     .add{
-        background-image: url('../assets/img/pipeline/PIPESadd.png');
+        background-image: url('../assets/img/newIcons/Asset 30.png');
         background-repeat: no-repeat;
         background-size: contain;
         width: 20px;
@@ -19,7 +19,7 @@ page-pipeline {
         margin: 5px 5px 10px 5px;
     }
     .downArrow{
-        background-image: url('../assets/img/pipeline/PIPESarrow.png');
+        background-image: url('../assets/img/newIcons/Asset 29.png');
         background-repeat: no-repeat;
         background-size: contain;
         width: 15px;
@@ -100,6 +100,7 @@ page-pipeline {
         align-items: center;
         justify-content: space-between;
         margin: 0px 10px 0px 10px;
+        font: 18px 'junction-light';
         color: $purp;
     }
     .smallCircle {
@@ -134,12 +135,17 @@ page-pipeline {
         display: flex;
         justify-content: center;
         align-items: center;
+        font: 20px 'junction-bold';
+        color: white;
         background-color: $greyy;
         height: 100%;
         width: 80%;
     }
     .description{
         text-align: center;
+        font: 15px 'junction-light';
+        color: $bluish;
+        margin-top: 8px;
     }
     .bluish{
         background-color: $bluish;

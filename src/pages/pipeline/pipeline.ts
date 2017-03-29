@@ -89,11 +89,14 @@ export class Pipeline implements OnInit {
   public support = false;
   dotColor(prosp){
     if(prosp == 0) {
-      return "#ACD373";
-    } else if(prosp == 1) {
       return "#959595";
+      //grey
+    } else if(prosp == 1) {
+      return "#1A9199";
+      //bluish
     } else {
       return "#E55F61"
+      //red
     }
   }
   pipeColor(x){
