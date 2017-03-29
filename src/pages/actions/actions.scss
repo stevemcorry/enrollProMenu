@@ -31,21 +31,28 @@ page-actions {
     .scroll-content{
         overflow-y: scroll;
     }
+    .item{
+        border-bottom: none !important;
+    }
     .actionsAdd{
         position: fixed;
         right: 5%;
         bottom: 12%;
         font-size: 50px;
     }
+    .striking{
+        text-decoration: line-through;
+        -moz-text-decoration-color: $redd;
+    }
     .task{
         display: flex;
         //height: 45px;
         align-items: center;
         //margin: 10px 0 10px 2px;
-        transition: transform .2s cubic-bezier(1, 0, 1, .2);
+        transition: transform .5s cubic-bezier(1, 0, 1, .2);
     }
     .completeAnimation{
-        transform: translateX(-550px);
+        transform: translateX(-100%);
         border-radius: 5px;
         background: $greeny;
     }
@@ -194,7 +201,7 @@ page-actions {
     }
     .statusCircle{
         border-radius: 50%;
-        border: 2.5px solid $greyy;
+        border: 2px solid $greyy;
         height: 25px;
         width: 25px;
         align-self: center;
