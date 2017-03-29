@@ -47,6 +47,9 @@ export class AddContact implements OnInit{
         })
     }
     getIndex(x){
+        if(this.choosePipe.getActiveIndex() > 6){
+            this.choosePipe.slideTo(6)
+        }
         if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
             return true;
         } else {
@@ -54,7 +57,6 @@ export class AddContact implements OnInit{
         }
     }
     setPipe(){
-        console.log(this.choosePipe.getActiveIndex(), 'index')
         this.contact.pipeline_position = this.choosePipe.getActiveIndex() + 1;
     }
     dismiss() {
@@ -63,7 +65,6 @@ export class AddContact implements OnInit{
     getTags(){
         this.getService.getStorage().then(key =>{
             this.getService.getTags(key).subscribe(res => {
-                console.log(res, 'tags');
                 this.tags = res;
             })
         })

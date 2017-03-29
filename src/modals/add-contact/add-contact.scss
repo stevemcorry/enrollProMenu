@@ -109,9 +109,6 @@ page-add-contact{
     .headerDiv{
         color: white;
     }
-    .save, .cancel{
-        width: 100px;
-    }
     .title{
         text-align: center;
     }
@@ -120,13 +117,18 @@ page-add-contact{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        margin: 5px 15px 15px 15px;
+        margin: 5px 15px 0px 15px;
         font-size: 25px;
     }
     .buttons{
         display: flex;
-        height: 25%;
-        justify-content: space-around;
+        margin: 25px 5px 5px 0;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .save{
+        width: 100px;
+        font: 15px 'junction-light';
     }
     .nameChoose{
         width: 65%;
@@ -139,21 +141,26 @@ page-add-contact{
         background-color: $greyy;
     }
     //pager
+    .smallSlide{
+        width: 25% !important;
+    }
     .slides{
-        height: 40px;
+        height: 45px;
     }
     .pipe{
         display: flex;
         align-items: center;
-        height: 30px;
+        height: 35px;
     }
     .slideName{
         height: 75%;
-        width: 90%;
+        width: 89%;
+        font: 20px 'junction-regular';
+        color: white;
         background-color: $greyy;
     }
     .bumper{
-        width: 4.5%;
+        width: 5%;
         height: 100%;
         background-color: $greyy;
         margin: 1px;
@@ -161,6 +168,11 @@ page-add-contact{
     .activePipe{
         background-color: $bluish
     }
+    .activeName{
+        width: 50% !important;
+    }
+    //PAGER
+
     .pagerBar{
         display: flex;
         width: 100%;
@@ -171,34 +183,14 @@ page-add-contact{
         display: flex;
     }
     .pagerFlag{
-        height: 8px;
-        width: 15px;
-        background: #f1f1f1;
-        border-top: 5px solid #f1f1f1;
-        border-bottom: 5px solid #f1f1f1;
-        border-left: 3px solid white;
-    }
-    .pagerArrow{
-        height: 5px;
-        width: 5px;
-        border-top: 5px solid white;
-        border-bottom: 5px solid white;
-        border-left: 5px solid #f1f1f1;
+        height: 6px;
+        width: 6px;
+        background: $greyy;
+        border-radius: 50%;
+        margin: 2px 2px;
     }
     .activeFlag{
-        height: 8px;
-        width: 15px;
-        background: #f1f1f1;
-        border-top: 5px solid lightgreen;
-        border-bottom: 5px solid lightgreen;
-        border-left: 3px solid white;
-    }
-    .activeArrow{
-        height: 5px;
-        width: 5px;
-        border-top: 5px solid white;
-        border-bottom: 5px solid white;
-        border-left: 5px solid lightgreen;
+        background: $bluish;
     }
     .choosePipe{
         //height: 20px;
@@ -209,6 +201,24 @@ page-add-contact{
         margin-bottom: 5px;
     }
     //TAGS
+    .addTagBox{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+    }
+    .addTagLabel{
+        font: 15px 'junction-light';
+        color: $bluish;
+
+    }
+    .addTag{
+        background-image: url('../assets/img/newIcons/Asset 25.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+    }
     .tags{
         display: flex;
         justify-content: space-around;
@@ -216,10 +226,11 @@ page-add-contact{
     }
     .tag{
         width: 30%;
-        border: 1px solid grey;
-        border-radius: 10px;
+        border: 1px solid $dark;
+        border-radius: 15px;
         text-align: center;
         font: 15px 'junction-light';
+        color: $dark;
         padding: 2px 0px;
         margin: 5px 0;
     }

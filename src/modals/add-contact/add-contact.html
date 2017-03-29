@@ -52,9 +52,9 @@
       </div>
       <div>
         <ion-slides #pipeSlider class="choosePipe" #choosePipe slidesPerView="3" (ionSlideDidChange)="setPipe()">
-          <ion-slide>
+          <ion-slide class="smallSlide">
           </ion-slide>
-          <ion-slide *ngFor="let slide of slides" class="slides">
+          <ion-slide *ngFor="let slide of slides" class="slides" [ngClass]="{activeName: getIndex(slide)}">
             <div class="pipe">
               <div class="bumper" [ngClass]="{activePipe: getIndex(slide)}"></div>
               <div class="slideName" [ngClass]="{activePipe: getIndex(slide)}">{{slide.name}}</div>
@@ -64,19 +64,21 @@
           <ion-slide>
           </ion-slide>
         </ion-slides>
-        <!--<div class="pagerBar">
+        <div class="pagerBar">
           <div *ngFor="let slide of slides" class="pagerBox">
             <div [ngClass]="{activeFlag: getIndex(slide)}" class="pagerFlag"></div>
-            <div class="pagerArrow" [ngClass]="{activeArrow: getIndex(slide)}"></div>
           </div>
-        </div>-->
+        </div>
       </div>
+    </div>
+    <div class="addTagBox">
+      <div class="addTag"></div>
+      <div class="addTagLabel">Add Tag</div>
     </div>
     <div class="tags">
       <div class="tag" *ngFor="let t of tags" [ngClass]="{tagOn: t.on}" (click)="t.on = !t.on; tag(tags)">{{t.name}}</div>
     </div>
     <div class="buttons">
-      <button class="cancel" ion-button (click)="log()">CANCEL</button>
-      <button class="save" ion-button (click)="addContact(contact)">SAVE</button>
+      <button class="save" ion-button bottom right (click)="addContact(contact)">Save</button>
     </div>
 </ion-content>

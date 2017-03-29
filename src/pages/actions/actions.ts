@@ -143,7 +143,9 @@ export class Actions implements OnInit{
     }
   }
   flop = true;
-
+  log(){
+    console.log('skiped')
+  }
   ngOnInit(){
       this.getActions();
   }

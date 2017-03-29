@@ -39,9 +39,9 @@ page-actions {
     }
     .task{
         display: flex;
-        height: 45px;
+        //height: 45px;
         align-items: center;
-        margin: 10px 0 10px 2px;
+        //margin: 10px 0 10px 2px;
         transition: transform .2s cubic-bezier(1, 0, 1, .2);
     }
     .completeAnimation{
@@ -159,7 +159,7 @@ page-actions {
         background-repeat: no-repeat;
         background-size: contain;
         height: 80px;
-        width: 80px;
+        width: 50px;
     }
     .addButtonActive{
         background-image: url('../assets/img/newIcons/Asset 89.png');
@@ -170,14 +170,25 @@ page-actions {
         background-color: rgba(0,0,0,0);
     }
     .addContactIcon{
-        background-image: url('../assets/img/actions/ACTIONSaddcontact.png');
+        background-image: url('../assets/img/newIcons/Asset 90.png');
         background-repeat: no-repeat;
+        background-size: contain;
         height: 40px;
         width: 40px;
     }
-    .addActionIcon{
-        background-image: url('../assets/img/actions/ACTIONSedit.png');
+    .circles{
+        position: fixed;
+        bottom: 0%;
+        background-image: url('../assets/img/newIcons/Asset 91.png');
         background-repeat: no-repeat;
+        background-size: contain;
+        height: 330px;
+        width: 300px;
+    }
+    .addActionIcon{
+        background-image: url('../assets/img/newIcons/Asset 88.png');
+        background-repeat: no-repeat;
+        background-size: contain;
         height: 40px;
         width: 40px;
     }
