@@ -1,4 +1,23 @@
 pipeline-choose{
+    .scroll-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .pipeImage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url('../../assets/img/newIcons/Asset 95.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+        width: 100%;
+    }
+    .images{
+        
+    }
     .click{
         width: 100%;
         font: 35px 'brandon-bold';
@@ -6,5 +25,45 @@ pipeline-choose{
     }
     .click:hover{
         background: lightgrey;
+    }
+    .leads{
+        display: flex;
+    }
+    .namesImg{
+        background-image: url('../../assets/img/newIcons/Asset 96.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 35px;
+        width: 35px;
+    }
+    .enrollments{
+        display: flex;
+    }
+    .enrollImg{
+        background-image: url('../../assets/img/newIcons/Asset 97.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 35px;
+        width: 35px;
+    }
+    .customers{
+        display: flex;
+    }
+    .customerImg{
+        background-image: url('../../assets/img/newIcons/Asset 98.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 35px;
+        width: 35px;
+    }
+    .builders{
+        display: flex;
+    }
+    .builderImg{
+        background-image: url('../../assets/img/newIcons/Asset 99.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 35px;
+        width: 35px;
     }
 }
