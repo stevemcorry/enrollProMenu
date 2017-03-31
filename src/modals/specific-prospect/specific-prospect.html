@@ -52,10 +52,10 @@
     </div>
   </div>-->
   <div class="pipePager">
-    <ion-slides #pipeSlider class="choosePipe" #choosePipe slidesPerView="3">
-      <ion-slide>
+    <ion-slides #pipeSlider class="choosePipe" #choosePipe slidesPerView="3" (ionSlideDidChange)="slideChange()">
+      <ion-slide class="firstSlide">
       </ion-slide>
-       <ion-slide *ngFor="let slide of slides" class="slides">
+       <ion-slide *ngFor="let slide of slides" class="slides" [ngClass]="{ activeSlide: getIndex(slide)}">
             <div class="pipe">
               <div class="bumper" [ngClass]="{activePipe: getIndex(slide)}"></div>
               <div class="slideName" [ngClass]="{activePipe: getIndex(slide)}">{{slide.name}}</div>
@@ -76,7 +76,13 @@
       <div class="slideName">{{slide.name}}</div>
     </ion-slide>
   </ion-slides>-->
-  <div>TAGs</div>
+  <div class="tagTop" (click)="addTags()">
+    <div class="tagIcon"></div>
+    <div class="tagLabel">Add Tag</div>
+  </div>
+  <div class="tags">
+    <div class="tag" *ngFor="let t of tags">{{t.name}}</div>
+  </div>
   <div class="box">
     <div class="topBox">
       <div class="smallBox" [ngClass]="{leftBox: leftBox}" (click)="leftBox=false; rightBox = true; complete = 0;">

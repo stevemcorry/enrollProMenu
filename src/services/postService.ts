@@ -33,5 +33,11 @@ export class PostService{
             authHeader.append('Authorization', 'Bearer '+ key);
         return this.http.post('http://api.enroll.pro/api/actions', action, { headers: authHeader});
     }
+    addTag(key, tag){
+        console.log(tag, 'post')
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+        return this.http.post('http://api.enroll.pro/api/contacts/tags', tag, { headers: authHeader});
+    }
 
 }

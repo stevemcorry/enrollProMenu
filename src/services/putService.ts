@@ -32,5 +32,15 @@ export class PutService{
         map(res => {
         });
     }
+    updateTags(key, id, x){
+        let tags = {
+            tags: x
+        }
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            authHeader.append('Content-Type','application/json')
+        return this.http.put('http://api.enroll.pro/api/contacts/' + id, tags, { headers: authHeader}).
+        map(res => {});
+    }
 
 }

@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
 import { PutService } from '../../services/putService';
-import { AddAction} from '../../modals/add-action/add-action';
+import { AddAction} from '../add-action/add-action';
+import { AddTags } from '../add-tags/add-tags';
 import { EditContact } from '../edit-contact/edit-contact';
-import { SpecificAction } from '../../modals/specific-action/specific-action';
+import { SpecificAction } from '../specific-action/specific-action';
 import { ModalController, Platform, NavParams, ViewController, Events, Slides, NavController} from 'ionic-angular';
 
 @Component({
@@ -25,6 +26,9 @@ export class SpecificProspect implements OnInit{
     this.events.subscribe('editContact', () => {
         this.getSpecificContact();
     });
+    this.events.subscribe('tagsAdded', () => {
+        this.getSpecificContact();
+    })
     }
     action;
     actions; 
@@ -47,13 +51,29 @@ export class SpecificProspect implements OnInit{
     sliderOptions ={
         pager:true
     }
+    tags;
     width = 0;
+    customerOn = false;
+    builderOn = false;
+    teamOn = false;
+    sharerOn = false;
 
     getSpecificContact(){
         this.getService.getStorage().then(key => {
             this.getService.getSpecificContact(key, this.prospect.id).subscribe(res => {
+                console.log(res, 'contact')
                 this.contact = res;
+                this.tags = res.tags;
                 this.actions = res.actions;
+                if(res.role.id == 1){
+                    this.builderOn = true;
+                } else if(res.role.id == 2){
+                    this.customerOn = true;
+                } else if(res.role.id == 3){
+                    this.sharerOn = true;
+                } else if(res.role.id == 4){
+                    this.teamOn = true
+                }
                 if(this.contact.pipeline_position.id > 6){
                     this.choosePipe.slideTo(this.contact.pipeline_position.id -1, 2000)
                 } else {
@@ -62,6 +82,14 @@ export class SpecificProspect implements OnInit{
              });
         })
     }
+    // getTags(){
+    //     this.getService.getStorage().then(key => {
+    //         this.getService.getTags(key).subscribe(res => {
+    //             this.tags = res;
+    //             console.log(this.tags, 'taags')
+    //         })
+    //     })
+    // }
     specificAction(action){
         action.contact = {
             first_name: this.contact.first_name,
@@ -77,9 +105,14 @@ export class SpecificProspect implements OnInit{
         let modal = this.modalCtrl.create(EditContact, {contact: this.contact});
         modal.present();
     }
+    addTags(){
+        this.navCtrl.push(AddTags, {tags: this.tags, contact: this.contact});
+    }
+    timer;
     slideChange() {
+        clearTimeout(this.timer)
         let x = this.choosePipe.getActiveIndex();
-        this.advancePipe(x);
+        this.timer = setTimeout( () => { this.advancePipe(x)},1000)
     }
     advancePipe(x){
         let pipe = x + 1;
@@ -132,6 +165,9 @@ export class SpecificProspect implements OnInit{
         })
     }
     getIndex(x){
+        if(this.choosePipe.getActiveIndex() > 13){
+            this.choosePipe.slideTo(13);
+        }
         if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
             return true;
         } else {

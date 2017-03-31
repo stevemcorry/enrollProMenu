@@ -140,7 +140,7 @@ page-specific-Prospect {
 
     //ACTIONS
     .box{
-        margin-top: 20px;
+        margin-top: 40px;
         min-height: 150px;
         width: 100%;
         bottom: 0%;
@@ -226,7 +226,13 @@ page-specific-Prospect {
         background-size: contain;
     }
 
-    //pager
+    //Slider
+    .firstSlide{
+        width: 25% !important;
+    }
+    .activeSlide{
+        width: 50% !important;
+    }
     .slides{
         height: 40px;
     }
@@ -253,5 +259,38 @@ page-specific-Prospect {
     }
     .activePipe{
         background-color: $bluish
+    }
+    //TAGS
+    .tagTop{
+        display: flex;
+        align-items: center;
+        margin: 10px 0 10px 5px;
+    }
+    .tagIcon{
+        background-image: url('../assets/img/newIcons/Asset 25.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+    }
+    .tagLabel{
+        font: 15px 'junction-light';
+        color: $bluish;
+    }
+    .tags{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .tag{
+        width: 30%;
+        font: 15px 'junction-light';
+        color: $bluish;
+        border: 1px solid $dark;
+        border-radius: 15px;
+        text-align: center;;
+        padding: 1px;
+        margin: 5px 0;
     }
 }

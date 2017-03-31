@@ -20,6 +20,7 @@ import { Messages } from '../pages/messages/messages';
 //Modals
 import { AddAction } from '../modals/add-action/add-action';
 import { AddContact } from '../modals/add-contact/add-contact';
+import { AddTags } from '../modals/add-tags/add-tags';
 import { ChooseActionContact } from '../modals/choose-action-contact/choose-action-contact';
 import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
 import { EditContact } from '../modals/edit-contact/edit-contact';
@@ -56,6 +57,7 @@ import { SpecificProspect } from '../modals/specific-prospect/specific-prospect'
     //Modals
     AddAction,
     AddContact,
+    AddTags,
     ChooseActionContact,
     ChooseContacts,
     EditContact,
@@ -91,6 +93,7 @@ import { SpecificProspect } from '../modals/specific-prospect/specific-prospect'
     //Modals
     AddAction,
     AddContact,
+    AddTags,
     ChooseActionContact,
     ChooseContacts,
     EditContact,
