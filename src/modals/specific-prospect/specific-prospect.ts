@@ -61,7 +61,6 @@ export class SpecificProspect implements OnInit{
     getSpecificContact(){
         this.getService.getStorage().then(key => {
             this.getService.getSpecificContact(key, this.prospect.id).subscribe(res => {
-                console.log(res, 'contact')
                 this.contact = res;
                 this.tags = res.tags;
                 this.actions = res.actions;
